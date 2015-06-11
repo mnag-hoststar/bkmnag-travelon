@@ -1,0 +1,148 @@
+{
+    "name":"Travelon",
+    "thumbnail":"travelon.png",
+    "screenshot":"travelon.png",
+    "templateType":"standard",
+    "pageTypes": ["home"],
+    "tags": {
+    "en": ["clean", "news", "fullscreen", "blog", "travel", "modern", "flexible", "colorful", "minimalistic", "serif"],
+    "es": ["limpio", "noticias", "fullscreen", "blog", "viajes", "moderno", "flexible", "colorido", "minimalista", "serif"],
+    "br": ["limpo", "notícia", "fullscreen", "blog", "viagem", "moderno", "flexível","colorido", "minimalista", "serif"]
+    },
+    "colorSwatches":
+    {
+        "Swatch 1": {
+            "color1":"#ffffff",
+            "color2":"#eeeeee",
+            "color3":"#6d85b4",
+            "color4":"#2f3339",
+            "color5":"#626265",
+            "color6":"#1e1f20",
+            "color7":"#ebebeb"
+        },
+        "Swatch 2": {
+            "color1":"#ffffff",
+            "color2":"#f0f3f5",
+            "color3":"#1d6ea0",
+            "color4":"#2a333b",
+            "color5":"#626366",
+            "color6":"#222324",
+            "color7":"#ebebeb"
+        },
+        "Swatch 3": {
+            "color1":"#ffffff",
+            "color2":"#eeeeee",
+            "color3":"#d7258e",
+            "color4":"#2f3339",
+            "color5":"#626265",
+            "color6":"#1e1f20",
+            "color7":"#ebebeb"
+        },
+        "Swatch 4": {
+            "color1":"#ffffff",
+            "color2":"#f3f3f3",
+            "color3":"#89c42d",
+            "color4":"#373737",
+            "color5":"#6d6d6d",
+            "color6":"#313330",
+            "color7":"#ebebeb"
+        },
+        "Swatch 5": {
+            "color1":"#ffffff",
+            "color2":"#f3f3f3",
+            "color3":"#de321b",
+            "color4":"#2f3339",
+            "color5":"#626265",
+            "color6":"#1e1f20",
+            "color7":"#ebebeb"
+        }
+    },
+    "fontSwatch": {
+       "title": "Montserrat",
+        "font1": {
+            "font-family": "\"Montserrat\", \"Trebuchet MS\", Helvetica, sans-serif",
+            "font-size": "40px",
+            "font-weight": "400",
+            "line-height": "40px",
+            "color": "@color-swatch4",
+            "letter-spacing": "inherit"
+        },
+        "font2": {
+            "font-family": "\"Montserrat\", \"Trebuchet MS\", Helvetica, sans-serif",
+            "font-size": "24px",
+            "font-weight": "inherit",
+            "line-height": "30px",
+            "color": "@color-swatch4",
+            "letter-spacing": "inherit"
+        },
+        "font3": {
+            "font-family": "\"Montserrat\", \"Trebuchet MS\", Helvetica, sans-serif",
+            "font-size": "18px",
+            "font-weight": "400",
+            "line-height": "28px",
+            "color": "@color-swatch4",
+            "letter-spacing": "inherit"
+        },
+        "font4": {
+            "font-family": "\"Montserrat\", \"Trebuchet MS\", Helvetica, sans-serif",
+            "font-size": "16px",
+            "font-weight": "400",
+            "line-height": "26px",
+            "color": "@color-swatch4",
+            "letter-spacing": "inherit"
+        },
+        "font5": {
+            "font-family": "\"Lora\", \"Georgia\", serif",
+            "font-size": "14px",
+            "font-weight": "400",
+            "line-height": "22px",
+            "color": "@color-swatch5",
+            "letter-spacing": "inherit"
+        },
+        "font6": {
+            "font-family": "\"Montserrat\", \"Trebuchet MS\", Helvetica, sans-serif",
+            "font-size": "14px",
+            "font-weight": "700",
+            "line-height": "26px",
+            "color": "@color-swatch1",
+            "color-hover": "@color-swatch3",
+            "letter-spacing": "inherit",
+            "background-color": "transparent",
+            "background-color-hover": "transparent"
+        },
+        "font7": {
+            "font-family": "\"Montserrat\", \"Trebuchet MS\", Helvetica, sans-serif",
+            "font-size": "15px",
+            "font-weight": "400",
+            "line-height": "15px",
+            "color": "@color-swatch1",
+            "letter-spacing": "0",
+            "background-color": "@color-swatch6",
+            "background-color-hover": "lighten(@color-swatch6,7%)"
+        },
+        "font8": {
+            "font-family": "\"Montserrat\", \"Trebuchet MS\", Helvetica, sans-serif",
+            "font-size": "58px",
+            "font-weight": "700",
+            "line-height": "64px",
+            "color": "@color-swatch1",
+            "letter-spacing": "inherit"
+        },
+        "font9": {
+            "font-family": "\"Montserrat\", \"Trebuchet MS\", Helvetica, sans-serif",
+            "font-size": "20px",
+            "font-weight": "400",
+            "line-height": "24px",
+            "color": "@color-swatch1",
+            "letter-spacing": "inherit"
+        },
+        "font10": {
+            "font-family": "\"Montserrat\", \"Trebuchet MS\", Helvetica, sans-serif",
+            "font-size": "26px",
+            "font-weight": "400",
+            "line-height": "40px",
+            "color": "@color-swatch1",
+            "letter-spacing": "inherit"
+        }
+    }
+}
