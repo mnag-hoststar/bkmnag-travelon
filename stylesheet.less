@@ -38,7 +38,7 @@
 /* 3. Header & Navigation */
 
 body {
-	 background: @color-swatch2;
+	 background-color: @color-swatch2;
 }
 
 .bk-pt-home {
@@ -247,7 +247,7 @@ body {
             		/*background: darken(@color-swatch6, 3%);*/
             		color: @font-swatch6-color-hover;
             		background: transparent;
-            		border: 2px solid fade(@font-swatch6-color, 10%);
+            		border: 2px solid fade(@color-swatch1, 10%);
             		position: relative;
             		margin-left: 20px;
             		margin-top: 8px;
@@ -265,7 +265,7 @@ body {
             			}
             		}
             		.text {
-            			font-size: bkscale(@font-swatch6-font-size, 0.90);
+            			font-size: bkscale(@font-swatch6-font-size, 0.9);
             		}
             	}
             }
@@ -303,14 +303,14 @@ body {
 		overflow: hidden;
 		cursor: pointer;
 		outline: none;
-		.transition( all, 0.5s, ease);
+		.transition(all, 0.5s, ease);
 		@media @mobile {
 		    left: 330px;
 		    top: 35px;
 		}
 	    &:hover {
 	    	//background-color: fade(@color-swatch6, 25%);
-	    	.transition( all, 0.5s, ease);
+	    	.transition(all, 0.5s, ease);
 	    }
 		&:after {
 			content: '';
@@ -363,33 +363,18 @@ div.widget .extendednavigation > ul, div.widget.extendednavigation > ul {
 	.transition( all, 0.5s, ease);
 }
 
-.bk-nav .socialicons .svg {
-	.bk-socialicons-linkedin {
-		a {
-			background-image: image('/images/social/socialicons-linkedin.svg');
-			opacity: 1;
-			&:hover {
-				opacity: 0.7;
-			}
-		}
-	}
-}
-
-
 /* 4. Feature */
 
 .widget.feature {
-	//border-right: 1px solid darken(@color-swatch6, 50%);
 	height: 100%;
 	.feature-bgimg {
-        display: inherit;
-        height: 100%;
+	    height: 100%;
     }
 }
 
 .widget.feature .feature-bgimg .content {
 	//padding: 100px 40px;
-	height: 100%;
+	//height: 100%;
 	text-align: center;
 	@media @mobile {
 		padding: 100px 20px;
@@ -442,7 +427,7 @@ div.widget .extendednavigation > ul, div.widget.extendednavigation > ul {
 	button {
 		border: 1px solid fade(@color-swatch1, 50%);
 		background: transparent;
-		padding: 5px 30px;
+		padding: 0px 30px 3px;
 		margin-top: 15px;
 		border-radius: 50px;
 		.transition( all, 0.75s, ease);
@@ -526,9 +511,7 @@ div.widget .extendednavigation > ul, div.widget.extendednavigation > ul {
 
 // ======= Widget: Blog Post List
 .widget.blogpostlist {
-	
 	.blog-post-list {
-		
 		.blog-post-item {
 			.clearfix;
 			border-bottom: 1px dotted @color-swatch5;
@@ -538,19 +521,16 @@ div.widget .extendednavigation > ul, div.widget.extendednavigation > ul {
 			@media @mobile {
 				margin-bottom: 20px;
 			}
-
 			.blog-post-feature-image-wrap {
 				height: 0;
 				padding-bottom: 40%;
 				background-size: cover;
 				background-position: center;
 				z-index: 1000;
-				
 				img {
 					display: none;
 				}
 			}
-
 			.blog-post-title {
 				font-family: @font-swatch1-font-family;
 			    font-weight: @font-swatch1-font-weight;
@@ -575,29 +555,23 @@ div.widget .extendednavigation > ul, div.widget.extendednavigation > ul {
 					}
 				}
 			}
-
 			.blog-post-summary, .blog-post-body {
 				margin-bottom: 1em;
-				
 			}
-
 			.blog-post-more-link {
 				float: left;
 				width: auto;
-				a {
-										
+				a {					
 				}
 			}
 			.blog-post-date {
-				float: right;				
-				
+				float: right;
 			}
 		}
 	}
 	.blog-list-footer {
 		padding: 0;
 		a {
-
 		}
 	}
 }
@@ -609,7 +583,6 @@ div.widget .extendednavigation > ul, div.widget.extendednavigation > ul {
 .widget.blogpost {
 	.blog-post-item {
 		.clearfix;
-
 		// Image
 		.blog-post-feature-image-wrap {
 			padding-bottom: 30%;
@@ -638,7 +611,7 @@ div.widget .extendednavigation > ul, div.widget.extendednavigation > ul {
 			    line-height: @font-swatch1-line-height;
 			    letter-spacing: @font-swatch1-letter-spacing;
 			    font-size: @font-swatch1-font-size;
-			    @media @bp-blog-compact {
+			    @media @tablet {
 			    	font-size: bkscale(@font-swatch1-font-size, 0.7);
 				    line-height: bkscale(@font-swatch1-line-height, 0.7);
 			    }
@@ -652,7 +625,7 @@ div.widget .extendednavigation > ul, div.widget.extendednavigation > ul {
 				float: left;
 				width: 70%;
 				padding: 0 50px 40px 0; 
-				@media @bp-blog-small {
+				@media @tablet {
 			    	float: none;
 			    	width: auto;
 			    	padding: 0 0 40px 0;
@@ -665,12 +638,12 @@ div.widget .extendednavigation > ul, div.widget.extendednavigation > ul {
 			time.blog-post-publish-date {
 				color: @color-swatch5;
 				font-size: @font-swatch5-font-size;
-				border-bottom: 1px solid  lighten(@color-swatch5,20%);
+				border-bottom: 1px solid lighten(@color-swatch5,20%);
 				display: block;
 				float: right;
 				width: 30%;
 				padding: 0 0 1em 0;
-				@media @bp-blog-small {
+				@media @tablet {
 			    	float: none;
 			    	width: auto;
 			    }
@@ -680,11 +653,11 @@ div.widget .extendednavigation > ul, div.widget.extendednavigation > ul {
 			}
 			// Category
 			div.blog-post-category {
-				border-bottom: 1px solid  lighten(@color-swatch5,20%);
+				border-bottom: 1px solid lighten(@color-swatch5, 20%);
 				float: right;
 				width: 30%;
 				padding: 1em 0;
-				@media @bp-blog-small {
+				@media @tablet {
 			    	float: none;
 			    	width: auto;
 			    }
@@ -707,7 +680,7 @@ div.widget .extendednavigation > ul, div.widget.extendednavigation > ul {
 				float: right;
 				width: 30%;
 				padding: 1em 0;
-				@media @bp-blog-small {
+				@media @tablet {
 			    	float: none;
 			    	width: auto;
 			    }
@@ -746,15 +719,14 @@ div.widget .extendednavigation > ul, div.widget.extendednavigation > ul {
     	a {
     		color: @color-swatch4;
     		&:hover {
-	        text-decoration: none;
-	        color: @color-swatch3;
+	            text-decoration: none;
+	            color: @color-swatch3;
 	        }
     	}
         ul {
             text-align: left;
             color: @color-swatch4;
         }
-
         li {
         	border: 1px solid fade(@color-swatch4, 50%);
         	border-radius: 20px;
@@ -770,8 +742,8 @@ div.widget .extendednavigation > ul, div.widget.extendednavigation > ul {
 .widget.menusections ul li {
 	display: inline-block;
 	margin: 0 0.4em;
-
 }
+
 .menu {
     .menu-item-image-wrap {
         background-size: cover;
@@ -823,7 +795,7 @@ div.widget .extendednavigation > ul, div.widget.extendednavigation > ul {
         line-height: @font-swatch5-line-height;
     }
     .menu-section-item-dietary-props .dietary-icon {
-    	        color: @color-swatch3;
+    	color: @color-swatch3;
         font-size: bkscale(@font-swatch5-font-size, 1.12);
     }
     .menu-subsection-promoted, .menu-items li.menu-item-promoted {
@@ -833,7 +805,6 @@ div.widget .extendednavigation > ul, div.widget.extendednavigation > ul {
         @media @mobile {
             padding: 1em;
         }
-
         ol {
             padding-bottom: 0;
         }
@@ -844,7 +815,6 @@ div.widget .extendednavigation > ul, div.widget.extendednavigation > ul {
             }
         }
         .menu-section-item-dietary-props .dietary-icon {
-            
         }
         .menu-item-price:after {
             display: table-cell;
@@ -914,7 +884,7 @@ div.widget .extendednavigation > ul, div.widget.extendednavigation > ul {
 	    	padding-bottom: 5px;
 	    }
 	    span {
-	    	font-size: bkscale(@font-swatch2-font-size, 0.80);
+	    	font-size: bkscale(@font-swatch2-font-size, 0.8);
 	    }
 	}
 }
@@ -942,7 +912,7 @@ div.widget .extendednavigation > ul, div.widget.extendednavigation > ul {
 
 .widget.ecomproduct {
 	h2 {
-		padding-bottom: 5px
+		padding-bottom: 5px;
 	}
 	.ecom-product-price {
 		color: lighten(@color-swatch5, 20%);
@@ -959,7 +929,7 @@ div.widget .extendednavigation > ul, div.widget.extendednavigation > ul {
 	}
 	a {
 		color: @font-swatch5-color;
-		font-size: bkscale(@font-swatch5-font-size, 1.1)
+		font-size: bkscale(@font-swatch5-font-size, 1.1);
 	}
 	a.checkout-empty-link {
 		color: @font-swatch7-color;
@@ -1644,7 +1614,7 @@ hr.line {
 				}
 				&:hover {
 					background-color: fade(@color-swatch1, 85%);
-					transition: all .5s ease;
+					.transition(all .5s ease);
 				}
 				&:after {
 					font-size: 28px;
