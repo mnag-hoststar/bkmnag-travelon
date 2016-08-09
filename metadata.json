@@ -1,7 +1,7 @@
 {
     "name":"Travelon",
-    "thumbnail":"travelon.png",
-    "screenshot":"travelon.png",
+    "thumbnail":"thumbnail.png",
+    "screenshot":"travelon-screenshot.jpg",
     "templateType":"standard",
     "pageTypes": ["home"],
     "tags": {
