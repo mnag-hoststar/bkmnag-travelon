@@ -48,7 +48,6 @@ body {
 		position: absolute;
 		top: 0;
 		width: 100%;
-		z-index: 1;
 		text-align: right;
 		@media @mobile {
 		    padding: 25px;
@@ -1256,12 +1255,12 @@ input.blog-search-input, .widget.signupform input,
     border: 1px solid darken(@color-swatch2, 5%);
     text-indent: 8px;
     -webkit-appearance: none;
-    transition: ease .5s border!important;
     background-color: @color-swatch1;
     height: 40px;
+    .transition(all .5s ease);
     &:hover {
         border: 1px solid darken(@color-swatch2, 15%);
-        transition: ease .5s border!important;
+        .transition(all .5s ease);
     }
 	&:focus {
         border: 1px solid darken(@color-swatch2, 25%);
@@ -1276,17 +1275,31 @@ textarea {
     border: 1px solid darken(@color-swatch2, 5%);
     text-indent: 8px;
     -webkit-appearance: none;
-    transition: ease .5s border!important;
     background-color: @color-swatch1;
+    padding: 10px;
+    height: 100px;
+    .transition(all .5s ease);
     &:hover {
         border: 1px solid darken(@color-swatch2, 15%)!important;
-        transition: ease .5s border!important;
+        .transition(all .5s ease);
     }
 	&:focus {
         border: 1px solid darken(@color-swatch2, 25%)!important;
     }
 }
 
+label, .contactform label, .advancedcontactform label {
+	font-family: @font-swatch4-font-family;
+	font-size: @font-swatch5-font-size;
+	font-weight: @font-swatch4-font-weight;
+	line-height: @font-swatch4-line-height;
+	margin: 0 0 5px;
+	display: inline-block;
+}
+
+.form-group {
+	margin-bottom: 1.5em;
+}
 
 .ecombasketsummary a {
 	display: inline-block;
@@ -1335,25 +1348,10 @@ textarea {
 .widget.paypalbuynow .widget.button.paypal:hover {
 }
 
-textarea {
-	padding-top: 10px;
-}
-
-
 
 .widget {
     &.contactform {
         margin: 20px 0;
-    	label {
-    		font-family: @font-swatch4-font-family;
-    		font-size: @font-swatch5-font-size;
-    		font-weight: @font-swatch4-font-weight;
-    		line-height: @font-swatch4-line-height;
-    		margin: 0 0 5px;
-    	}
-        input, textarea {
-            margin-bottom: 10px;
-        }
         button.btn {
             @media @mobile {
                 width: 100%;
@@ -1416,7 +1414,9 @@ textarea {
 
 /* 11. Misc Elements */
 
-button.btn, .contactform button.btn, .widget.blogsearch button {
+button.btn, .contactform button, .contactform button.btn, 
+.advancedcontactform button, .advancedcontactform button.btn, 
+.widget.blogsearch button {
     padding: 0 30px;
     height: 40px;
     min-width: 120px;
