@@ -1422,10 +1422,11 @@ button.btn, .contactform button, .contactform button.btn,
     padding: 0 30px;
     height: 40px;
     min-width: 120px;
+    .transition(all, 0.5s, ease);
     &:hover {
         background-color: @font-swatch7-background-color-hover;
         cursor: pointer;
-        border: 0;
+        .transition(all, 0.5s, ease);
     }
     @media @mobile {
         width: 100%;
