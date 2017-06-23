@@ -123,6 +123,11 @@ body {
 	}
 }
 
+div.widget .extendednavigation ul,
+div.widget .navigation ul {
+    float: none !important;
+}
+
 .bk-nav {
 	background: fade(@color-swatch6, 80%);
 	height: 100%;
@@ -131,90 +136,53 @@ body {
 	width: 320px;
 	.transition( all, 0.5s, ease);
     z-index: 9999;
-    .widget.socialicons {
-    	float: left;
-    	padding: 30px 15px;
-    	margin: 0;
-    	width: 100%;
-	    .bk-socialicons-linkedin {
-	        a {
-                background-image: image('/images/social/socialicons-linkedin.svg');
-                opacity: 1;
-                &:hover {
-                    opacity: 0.8;
-                }
-            }
-        }
-        .bk-socialicons-twitter {
-	        a {
-                background-image: image('/images/social/socialicons-twitter.svg');
-                opacity: 1;
-                &:hover {
-                    opacity: 0.8;
-                }
-            }
-        }
-        .bk-socialicons-facebook {
-	        a {
-                background-image: image('/images/social/socialicons-facebook.svg');
-                opacity: 1;
-                &:hover {
-                    opacity: 0.8;
-                }
-            }
-        }
-        .bk-socialicons-rss {
-	        a {
-                background-image: image('/images/social/socialicons-rss.svg');
-                opacity: 1;
-                &:hover {
-                    opacity: 0.8;
-                }
-            }
-        }
-        .bk-socialicons-googleplus {
-	        a {
-                background-image: image('/images/social/socialicons-googleplus.svg');
-                opacity: 1;
-                &:hover {
-                    opacity: 0.8;
-                }
-            }
-        }
-        .bk-socialicons-youtube {
-	        a {
-                background-image: image('/images/social/socialicons-youtube.svg');
-                opacity: 1;
-                &:hover {
-                    opacity: 0.8;
-                }
-            }
-        }
-    }
+	
 	@media only screen and (max-height: 450px) {
 		height: auto;
 	}
-    /*&:after {
-    	@media only screen and (max-height: 450px) {
-    		background: @color-swatch6;
-			border-left: 1px solid black;
-			content: "";
-			display: block;
-			height: 100%;
-			right: 0;
-			width: 320px;
-			position: absolute;
-    	}
-    }*/
+	
     @media @mobile {
     	left: -300px;
     	width: 300px;
     }
 }
 
+
+.bk-nav {
+	background: fade(@color-swatch6, 80%);
+	height: 100%;
+	position: fixed;
+	left: -320px;
+	width: 320px;
+	.transition( all, 0.5s, ease);
+    z-index: 9999;
+	
+    @media @mobile {
+    	left: -300px;
+    	width: 300px;
+    }
+}
+
+.widget.socialicons,
+.widget.profile .bk-profile-socialicons {
+	background-color: transparent;
+	padding: 0 35px;
+	
+	span a {
+		margin-right: 15px;
+		margin-bottom: 15px;
+		background-size: 16px;
+		background-color: darken(@color-swatch6, 15%);
+		.border-radius(50%);
+		
+		&:hover {
+			background-color: darken(@color-swatch6, 20%);
+		}
+	}
+}
+
 .widget.extendednavigation {
 	//background: @color-swatch3;
-	float: left;
 	padding: 30px 15px;
 	width: 100%;
     ul {
@@ -222,13 +190,16 @@ body {
         padding: 0;
         list-style: none;
         width: 100%;
+		
         @media @tablet {
         	display: block;
         }
+		
         li {
             display: block;
             padding: 10px 0;
             cursor: pointer;
+			
             &:before {
 	            display: inline-block;
 	            text-decoration: inherit;
@@ -241,8 +212,10 @@ body {
 	            text-transform: none;
 	            line-height: 1em;
         	}
+			
             &:hover { 
             	.transition( all, 0.5s, ease);
+				
             	ul {
             		/*background: darken(@color-swatch6, 3%);*/
             		color: @font-swatch6-color-hover;
@@ -252,6 +225,7 @@ body {
             		margin-left: 20px;
             		margin-top: 8px;
             		width: 90%;
+					
             		li {
             			padding: 12px 6px;
             			&:first-child {
@@ -264,6 +238,7 @@ body {
             				padding-left: 15px;
             			}
             		}
+					
             		.text {
             			font-size: bkscale(@font-swatch6-font-size, 0.9);
             		}
@@ -496,14 +471,6 @@ div.widget .extendednavigation > ul, div.widget.extendednavigation > ul {
 			text-align: center;
 		}
 	}
-}
-
-.bk-footer .widget.profile .bk-profile-socialicons span a, .bk-footer .widget.profile .bk-profile-socialicons span a:hover {
-	background-color: transparent;
-}
-
-.widget.profile .bk-profile-socialicons span {
-	padding: 3px;
 }
 
 /* 7. Blog */
@@ -1675,75 +1642,6 @@ hr.line {
 			}
 		}
 		.slideshow-image-list {
-		}
-	}
-}
-
-.widget.socialicons, .widget.profile .bk-profile-socialicons {
-	margin: 2em 0 1em;
-	text-align: center;
-    span a {
-		background-color: transparent;
-		background-size: 26px;
-		&:hover{
-			background-color: transparent;
-		}
-	}
-}
-
-.svg {
-	.bk-socialicons-linkedin {
-		a {
-			background-image: image('/images/social/socialicons-linkedin-hover.svg');
-			opacity: 1;
-			&:hover {
-				opacity: 0.7;
-			}
-		}
-	}
-	.bk-socialicons-twitter {
-		a {
-			background-image: image('/images/social/socialicons-twitter-hover.svg');
-			opacity: 1;
-			&:hover {
-				opacity: 0.7;
-			}
-		}
-	}
-	.bk-socialicons-facebook {
-		a {
-			background-image: image('/images/social/socialicons-facebook-hover.svg');
-			opacity: 1;
-			&:hover {
-				opacity: 0.7;
-			}
-		}
-	}
-	.bk-socialicons-rss {
-		a {
-			background-image: image('/images/social/socialicons-rss-hover.svg');
-			opacity: 1;
-			&:hover {
-				opacity: 0.7;
-			}
-		}
-	}
-	.bk-socialicons-googleplus {
-		a {
-			background-image: image('/images/social/socialicons-googleplus-hover.svg');
-			opacity: 1;
-			&:hover {
-				opacity: 0.7;
-			}
-		}
-	}
-	.bk-socialicons-youtube {
-		a {
-			background-image: image('/images/social/socialicons-youtube-hover.svg');
-			opacity: 1;
-			&:hover {
-				opacity: 0.7;
-			}
 		}
 	}
 }
