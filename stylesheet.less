@@ -86,6 +86,8 @@ body {
 .widget {
 	&.logo, &.companyname {
 		display: inline-block;
+		min-height: 50px;
+        min-width: 60px;
 	}
 	&.logo {
 		margin-right: 12px;
@@ -301,14 +303,16 @@ div.widget .navigation ul {
 	}
 }
 
-div.widget .extendednavigation ul, div.widget.extendednavigation ul {
+div.widget .extendednavigation ul,
+div.widget.extendednavigation ul {
 	display: block;
 	li {
 		display: block; 
 	}
 }
 
-div.widget .extendednavigation > ul, div.widget.extendednavigation > ul {
+div.widget .extendednavigation > ul,
+div.widget.extendednavigation > ul {
 	display: block!important;
 }
 
@@ -316,7 +320,27 @@ div.widget .extendednavigation > ul, div.widget.extendednavigation > ul {
 	right: 0px; 
 }
 
-.menu-active #main, .menu-active .bk-header { 
+.widget.extendednavigation .widget-overlay {
+    right: -100px;
+    left: 320px;
+    
+    .menu-active & {
+        left: 320px;
+    }
+    
+    > ul {
+            display: inline-block;
+            font-size: 0;
+        
+        li {
+            display: inline-block;
+            padding: 0;
+        }
+    }
+}
+
+.menu-active #main,
+.menu-active .bk-header { 
 	//right: 320px; 
 	.transition( all, 0.5s, ease);
     -webkit-backface-visibility: hidden;
