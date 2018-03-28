@@ -2,15 +2,16 @@
 
 1. Imports & Includes
 2. Mixins
-3. Header & Navigation
-4. Feature
-5. Main
-6. Footer
-7. Blog
-8. Menu
-9. Ecommerce
-10. Forms
-11. Misc Elements (Social, Typography etc.)
+3. Language Selector
+4. Header & Navigation
+5. Feature
+6. Main
+7. Footer
+8. Blog
+9. Menu
+10. Ecommerce
+11. Forms
+12. Misc Elements (Social, Typography etc.)
 
 */
 
@@ -36,7 +37,370 @@
 	transition:			@prop @time @ease;
 }
 
-/* 3. Header & Navigation */
+/* 3. Language Selector */
+
+@language-padding: 0.5em;
+@language-line-height: @font-swatch7-line-height;
+
+// General styles
+
+.language-selector {
+	&.language-selector--horizontal,
+	&.language-selector--dropdown {
+		position: relative;
+		top: 0;
+		right: 0;
+		left: 0;
+		z-index: 200;
+		box-sizing: content-box;
+		margin: 0 auto;
+	}
+
+	&.language-selector--light,
+	&.language-selector--dark {
+		background-color: transparent;
+	}
+	
+	&.language-selector--dropdown {
+		height: auto;
+		text-align: left;
+	}
+
+    .language-selector__inner,
+    .language-selector__list,
+    .language-selector__item,
+    .language-selector__link,
+    .language-selector__name,
+    .language-selector__localised-name {
+    	font-family: @font-swatch7-font-family;
+    	font-size: @font-swatch7-font-size;
+    	font-weight: @font-swatch7-font-weight;
+    	line-height: @language-line-height;
+    	letter-spacing: @font-swatch7-letter-spacing;
+    	color: @font-swatch7-color;
+    }
+}
+	
+// Inner
+
+.language-selector__inner {
+    .language-selector & {
+	    box-sizing: content-box;
+    	padding: 32px+32px+@language-line-height+2px 32px @language-padding*3 100px;
+		height: 0;
+        
+        @media @tablet {
+    	    width: auto;
+        }
+		
+		@media @mobile {
+    		padding: 20px+20px+@language-line-height+2px 20px @language-padding*3 100px;
+		}
+    }
+    
+    .language-selector.language-selector--horizontal & {
+		padding: 32px 32px @language-padding*7 100px;
+		height: @language-line-height+2px;
+		
+		@media @mobile {
+			padding: 20px 20px @language-padding*7 100px;
+			height: @language-line-height+2px;
+		}
+    }
+
+	.language-selector.language-selector--dropdown & {
+    	&:before {
+    	    content: "";
+            display: block;
+    	    height: @language-line-height;
+    	}
+    	&:after {
+    	    content: "";
+            display: block;
+    	    height: @language-padding*2;
+    	}
+
+		@media @mobile {
+			width: 100%;
+		}
+	}
+}
+	
+// List
+
+.language-selector__list {
+    .language-selector & {
+	    min-width: auto;
+    }
+	
+	.language-selector.language-selector--dropdown & {
+		box-sizing: border-box;
+		margin: 0;
+		padding: 32px 32px 32px 100px;
+		min-width: auto;
+	    max-width: ~"calc(100% - 1em)";
+        
+        @media @tablet {
+	    	max-width: 100%;
+        }
+		
+		@media @mobile {
+			padding: 20px 20px 20px 100px;
+			width: 100%;
+		}
+	}
+}
+	
+// Item
+
+.language-selector__item {
+	.language-selector.language-selector--light &,
+	.language-selector.language-selector--dark & {
+		cursor: pointer;
+	    position: relative;
+		border: none;
+		background-color: transparent;
+		width: auto;
+		max-width: 100%;
+		border-radius: @language-padding*3;
+		border: 1px solid fade(@color-swatch1, 50%);
+		.transition(all, 0.75s, ease);
+	}
+	
+	// Link Color
+	
+	.language-selector.language-selector--horizontal & {
+		margin: 0 0 @language-padding @language-padding;
+		
+		.language-selector--light& {
+			background-color: fade(@color-swatch1, 20%);
+			
+			&:hover,
+			&--current {
+				&, &:hover {
+					border: 1px solid @color-swatch1;
+					background-color: @color-swatch1;
+					color: black;
+				}
+			}
+		}
+		.language-selector--dark& {
+			background-color: transparent;
+			background-color: fade(black, 20%);
+			
+			&:hover,
+			&--current {
+				&, &:hover {
+					border: 1px solid black;
+					background-color: black;
+					color: @color-swatch1;
+				}
+			}
+		}
+	}
+	.language-selector.language-selector--dropdown & {
+		border-radius: 0;
+		
+		.language-selector--light& {
+			border: 1px solid @color-swatch1;
+			background-color: @color-swatch1;
+			
+			&:hover {
+				border: 1px solid darken(@color-swatch1, 10%);
+				background-color: darken(@color-swatch1, 10%);
+			}
+			
+			&--current {
+				border-radius: @language-padding*3;
+				border: 1px solid fade(@color-swatch1, 50%);
+				background-color: fade(@color-swatch1, 20%);
+				margin-bottom: @language-padding*1.5;
+				
+				&:hover {
+					border: 1px solid @color-swatch1;
+					background-color: @color-swatch1;
+					color: black;
+				}
+			}
+		}
+		.language-selector--dark& {
+			border: 1px solid black;
+			background-color: black;
+			
+			&:hover {
+				border: 1px solid lighten(black, 10%);
+				background-color: lighten(black, 10%);
+			}
+			
+			&--current {
+				border-radius: @language-padding*3;
+				border: 1px solid fade(@color-swatch1, 50%);
+				background-color: fade(black, 20%);
+				margin-bottom: @language-padding*1.5;
+				
+				&:hover {
+					border: 1px solid black;
+					background-color: black;
+					color: @color-swatch1;
+				}
+			}
+		}
+	}
+	
+	// Current Item
+	
+	&--current {
+	    &:after {
+    		.language-selector.language-selector--dropdown & {
+				position: absolute;
+        		content: "\25be";
+        		top: 50%;
+        		right: 0;
+        		margin-top: -(@language-line-height/4);
+        		width: @language-padding*4;
+    		    background-color: transparent;
+        		line-height: @language-line-height/2;
+        	    font-size: @font-swatch7-font-size;
+        		color: @font-swatch7-color;
+        		text-align: center;
+    		}
+	    }
+				
+		&:hover:after {
+    		.language-selector.language-selector--dropdown & {
+				.language-selector--light& {
+					color: black;
+				}
+				.language-selector--dark& {
+					color: @color-swatch1;
+				}
+			}
+		}
+	}
+}
+
+// Link
+
+.language-selector__link {
+	.language-selector & {
+		box-sizing: border-box;
+		padding: 0 @language-padding*2;
+		border: none;
+		hyphens: auto;
+	}
+	
+	// Horizontal - Item
+	
+	.language-selector.language-selector--horizontal & {
+		text-align: right;
+		display: inline-block;
+	}
+	
+	// Dropdown - Item
+	
+	.language-selector.language-selector--dropdown & {
+		padding-right: @language-padding*4;
+	}
+	
+	// Link Color
+	
+	.language-selector.language-selector--horizontal &,
+	.language-selector.language-selector--horizontal .language-selector__item--current &,
+	.language-selector.language-selector--dropdown &,
+	.language-selector.language-selector--dropdown .language-selector__item--current & {
+		.language-selector--light&,
+		.language-selector--dark& {
+			&,
+			&:hover {
+				background-color: transparent;
+			}
+		}
+	}
+}
+
+// Icon
+
+.language-selector__icon {
+	.language-selector & {
+		margin-right: 0;
+		padding: @language-padding*1.5 0;
+		min-height: @language-line-height;
+		box-sizing: content-box;
+		line-height: @language-line-height;
+	}
+	.language-selector.language-selector--flag-text & {
+		margin: 0;
+	}
+	.language-selector.language-selector--dropdown.language-selector--flag-text & {
+		float: left;
+		box-sizing: border-box;
+		line-height: @language-line-height;
+	}
+}
+
+// Name
+
+.language-selector__name,
+.language-selector__localised-name {
+	
+	.language-selector.language-selector--flag-text & {
+		display: inline-block;
+		padding: @language-padding*1.5 0 @language-padding*1.5 @language-padding;
+	}
+	.language-selector.language-selector--text &,
+	.language-selector.language-selector--flag & {
+		padding: @language-padding*1.5 0;
+	}
+	.language-selector.language-selector--text & {
+		display: block;
+	}
+	
+	.language-selector.language-selector--dropdown & {
+		display: block;
+		white-space: nowrap;
+		overflow: hidden;
+		text-overflow: ellipsis;
+		
+		.language-selector--flag-text& {
+			@media only screen and (max-width: 480px) {
+				display: none;
+			}
+		}
+	}
+	
+	// Link Color
+	
+	.language-selector.language-selector--horizontal .language-selector__item:hover &,
+	.language-selector.language-selector--horizontal .language-selector__item--current &,
+	.language-selector.language-selector--horizontal .language-selector__item--current:hover & {
+		.language-selector--light& {
+			color: black;
+		}
+		.language-selector--dark& {
+			color: @color-swatch1;
+		}
+	}
+	.language-selector.language-selector--dropdown .language-selector__item &,
+	.language-selector.language-selector--dropdown .language-selector__item:hover &,
+	.language-selector.language-selector--dropdown .language-selector__item--current:hover & {
+		.language-selector--light& {
+			color: black;
+		}
+		.language-selector--dark& {
+			color: @color-swatch1;
+		}
+	}
+	.language-selector.language-selector--dropdown .language-selector__item--current & {
+		.language-selector--light& {
+			color: @color-swatch1;
+		}
+		.language-selector--dark& {
+			color: @color-swatch1;
+		}
+	}
+}
+
+/* 4. Header & Navigation */
 
 body {
 	 background-color: @color-swatch2;
@@ -131,9 +495,10 @@ div.widget .navigation ul {
 }
 
 .bk-nav {
+	position: fixed;
+	top: 0;
 	background: fade(@color-swatch6, 80%);
 	height: 100%;
-	position: fixed;
 	left: -320px;
 	width: 320px;
 	.transition( all, 0.5s, ease);
@@ -362,7 +727,7 @@ div.widget.extendednavigation > ul {
 	.transition( all, 0.5s, ease);
 }
 
-/* 4. Feature */
+/* 5. Feature */
 
 .widget.feature {
 	height: 100%;
@@ -428,12 +793,12 @@ div.widget.extendednavigation > ul {
 		background: transparent;
 		padding: 0px 30px 3px;
 		margin-top: 15px;
-		border-radius: 50px;
-		.transition( all, 0.75s, ease);
+		border-radius: 1.5em;
+		.transition(all, 0.75s, ease);
 		&:hover {
 			background-color: @color-swatch1;
 			color: black;
-			.transition( all, 0.75s, ease);
+			.transition(all, 0.75s, ease);
 		}
 		@media @mobile {
 			padding: 8px 20px;
@@ -442,7 +807,7 @@ div.widget.extendednavigation > ul {
 	}
 }
 
-/* 5. Main */
+/* 6. Main */
 
 .contain {
 	padding: 40px;
@@ -479,7 +844,7 @@ div.widget.extendednavigation > ul {
     }
 }
 
-/* 6. Footer */
+/* 7. Footer */
 
 .bk-footer {
 	.copyright {
@@ -497,7 +862,7 @@ div.widget.extendednavigation > ul {
 	}
 }
 
-/* 7. Blog */
+/* 8. Blog */
 
 
 // ======= Widget: Blog Post List
@@ -702,7 +1067,7 @@ div.widget.extendednavigation > ul {
 	}
 }
 
-/* 8. Menu */
+/* 9. Menu */
 
 
 .widget {
@@ -837,7 +1202,7 @@ div.widget.extendednavigation > ul {
     }
 }
 
-/* 9. Ecommerce */
+/* 10. Ecommerce */
 
 .widget.ecomproductslist {
 	.ecom-productslist-product a {
@@ -1237,7 +1602,7 @@ a.btn.ecom-product-go-to-checkout-btn, a.btn.ecombasket-summary-link {
     
 }
 
-/* 10. Forms */
+/* 11. Forms */
 
 input,
 .widget.profile form fieldset input,
@@ -1403,13 +1768,13 @@ label, .contactform label, .advancedcontactform label {
     }
 }
 
-/* 11. Misc Elements */
+/* 12. Misc Elements */
 
 button.btn, .contactform button, .contactform button.btn, 
 .advancedcontactform button, .advancedcontactform button.btn, 
 .widget.blogsearch button {
     padding: 0 30px;
-    height: 40px;
+    min-height: 40px;
     min-width: 120px;
     .transition(all, 0.5s, ease);
     &:hover {
