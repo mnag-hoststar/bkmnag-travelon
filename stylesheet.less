@@ -78,6 +78,10 @@
     	line-height: @language-line-height;
     	letter-spacing: @font-swatch7-letter-spacing;
     	color: @font-swatch7-color;
+		-webkit-font-smoothing: auto;
+		-moz-osx-font-smoothing: auto;
+		font-smooth: auto;
+		text-rendering: auto;
     }
 }
 	
@@ -88,10 +92,6 @@
 	    box-sizing: content-box;
     	padding: 32px+32px+@language-line-height+2px 32px @language-padding*3 100px;
 		height: 0;
-        
-        @media @tablet {
-    	    width: auto;
-        }
 		
 		@media @mobile {
     		padding: 20px+20px+@language-line-height+2px 20px @language-padding*3 100px;
@@ -185,7 +185,6 @@
 			}
 		}
 		.language-selector--dark& {
-			background-color: transparent;
 			background-color: fade(black, 20%);
 			
 			&:hover,
@@ -342,7 +341,6 @@
 
 .language-selector__name,
 .language-selector__localised-name {
-	
 	.language-selector.language-selector--flag-text & {
 		display: inline-block;
 		padding: @language-padding*1.5 0 @language-padding*1.5 @language-padding;
