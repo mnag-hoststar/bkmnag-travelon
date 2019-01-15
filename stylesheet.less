@@ -1718,10 +1718,6 @@ label, .contactform label, .advancedcontactform label {
 	}
 }
 
-.widget.paypalbuynow .widget.button.paypal:hover {
-}
-
-
 .widget {
     &.contactform {
         margin: 20px 0;
@@ -1783,6 +1779,41 @@ label, .contactform label, .advancedcontactform label {
     	button.btn:hover {
     	}
     }
+}
+
+// Privacy Checkboxes
+
+.widget.advancedcontactform .form-group.advancedcontactform__form-group--terms,
+.widget.contactform .form-group.contactform__form-group--terms,
+.widget.signupform .form-group.signupform__form-group--terms {
+	input[type="checkbox"] {
+		opacity: 1;
+		margin: 4px 8px 4px 4px;
+		padding: 0;
+		min-height: auto;
+		min-width: auto;
+		height: auto !important;
+		width: auto !important;
+		line-height: 1em;
+		-webkit-appearance: checkbox;
+		-moz-appearance: checkbox;
+		appearance: checkbox;
+	}
+	
+	label {
+		padding-bottom: 0;
+		
+		&:before {
+			display: none;
+		}
+		
+		.form__link {
+			font-family: @font-swatch4-font-family;
+			font-size: @font-swatch5-font-size;
+			font-weight: @font-swatch4-font-weight;
+			letter-spacing: @font-swatch4-letter-spacing;
+		}
+	}
 }
 
 /* 12. Misc Elements */
