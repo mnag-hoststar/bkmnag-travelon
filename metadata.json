@@ -3,6 +3,7 @@
     "thumbnail":"thumbnail.png",
     "screenshot":"travelon-screenshot.jpg",
     "templateType":"standard",
+    "versionTenCompatible": 1,
     "pageTypes": ["home"],
     "tags": {
     "en": ["clean", "news", "fullscreen", "blog", "travel", "modern", "flexible", "colorful", "minimalistic", "serif"],
