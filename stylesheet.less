@@ -2488,7 +2488,7 @@ hr.line {
 
 .widget {
 	&.responsiveslideshow {
-		margin-top: 20px;
+		margin: 60px 0;
 
 		.slideshow-widget-controls {
 			.dot {
@@ -2548,15 +2548,6 @@ hr.line {
 
 		.content-wrapper {
 			background-color: fade(@color-swatch1, 75%);
-			top: initial;
-			display: inline-block;
-			min-height: 50px;
-			height: auto;
-			max-width: 65%;
-			left: 15px;
-			right: auto;
-			max-width: 80%;
-			bottom: 15px;
 
 			@media @mobile {
 				display: block;
@@ -2564,24 +2555,35 @@ hr.line {
 			}
 
 			span {
+				display: block;
 				color: @color-swatch5;
-				padding: 20px 4px 0 10px;
 
 				@media @mobile {
 					padding-right: 10px;
 				}
 
-				&:last-child {
-					padding-right: 10px;
+				&.title {
+					padding: 20px 20px 0;
+					font-weight: @font-swatch2-font-weight;
+					font-size: @font-swatch5-font-size*1.5;
+					line-height: @font-swatch5-line-height*1.5;
+
+					@media @mobile {
+						padding-bottom: 20px;
+					}
 				}
 
-				&.title {
-					font-weight: @font-swatch2-font-weight;
+				&.description {
+					padding: 10px 20px 20px;
+					line-height: @font-swatch5-line-height;
+					font-size: @font-swatch5-font-size;
 				}
 			}
 		}
 
 		.slideshow-widget {
+			background-color: darken(@color-swatch2, 5%);
+
 			.btn-play {
 				background-color: fade(@color-swatch1, 65%);
 				.border-radius(100px);
