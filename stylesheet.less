@@ -526,7 +526,7 @@ div.widget .navigation ul {
     float: none !important;
 }
 
-.bk-nav {
+nav.bk-nav {
 	position: fixed;
 	top: 0;
 	background: fade(@color-swatch6, 80%);
@@ -544,22 +544,10 @@ div.widget .navigation ul {
     	left: -300px;
     	width: 300px;
     }
-}
 
-
-.bk-nav {
-	background: fade(@color-swatch6, 80%);
-	height: 100%;
-	position: fixed;
-	left: -320px;
-	width: 320px;
-	.transition( all, 0.5s, ease);
-    z-index: 9999;
-	
-    @media @mobile {
-    	left: -300px;
-    	width: 300px;
-    }
+	.menu-active & {
+		position: fixed;
+	}
 }
 
 .widget.socialicons,
