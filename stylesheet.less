@@ -670,10 +670,6 @@ div.widget .navigation ul {
             		color: @font-swatch6-color;
             	}
 	        }
-	        a {
-	        	&:hover {
-	        	}
-	        }
         }
 
     }
@@ -751,15 +747,10 @@ div.widget.extendednavigation > ul {
 .menu-active .bk-header { 
 	//right: 320px; 
 	.transition( all, 0.5s, ease);
-    -webkit-backface-visibility: hidden;
-    @media @mobile {
-    	//right: 250px;
-    }
 }
 
 #main, .bk-header, .bk-pt-home #main .widget.feature.bk-tpl-hidden + .bk-header {
 	.transition( all, 0.5s, ease);
-	-webkit-backface-visibility: hidden;
 }
 
 .menu-active .bk-nav { 
@@ -788,25 +779,6 @@ div.widget.extendednavigation > ul {
 	@media @mobile {
 		padding: 100px 20px;
 		-webkit-overflow-scrolling: touch;
-	}
-	.spare {
-		/*@media only screen and (max-height: 450px) {
-			position: relative;
-			top: 30px;
-			h2 {
-				font-size: bkscale(@font-swatch1-font-size, 0.62);
-				line-height: bkscale(@font-swatch1-line-height, 0.68);
-				padding-bottom: 8px;
-			}
-			h3 {
-				font-size: bkscale(@font-swatch5-font-size, 0.95);
-				line-height: bkscale(@font-swatch5-line-height, 0.8);
-			}
-			button {
-				padding: 8px 15px;
-				margin-top: 12px;
-			}
-		} */
 	}
 	h2 {
 		padding-bottom: 10px;
@@ -1107,11 +1079,6 @@ div.widget.extendednavigation > ul {
 						content: ": ";
 					}
 				}
-				p.blog-post-category {
-					a {
-
-					}
-				}
 			}
 			// Tags
 			.blog-post-tags {
@@ -1252,8 +1219,6 @@ div.widget.extendednavigation > ul {
                 margin-bottom: 0;
             }
         }
-        .menu-section-item-dietary-props .dietary-icon {
-        }
         .menu-item-price:after {
             display: table-cell;
             content: "\2605";
@@ -1267,8 +1232,6 @@ div.widget.extendednavigation > ul {
     .menu-subsection-name {
         color: @font-swatch2-color;
         margin-bottom: 0.25em;
-    }
-    .menu-item-description {
     }
     .menu-item-price {
         display: table;
@@ -1479,7 +1442,7 @@ a.btn.ecom-product-go-to-checkout-btn, a.btn.ecombasket-summary-link {
 }
 
 .widget {
-	.ecomfeaturedproducts, .ecomcategorieslist, .checkout-form, {
+	.ecomfeaturedproducts, .ecomcategorieslist, .checkout-form {
 		margin: 1.5em 0;
 	}
 }
@@ -1669,12 +1632,6 @@ a.btn.ecom-product-go-to-checkout-btn, a.btn.ecombasket-summary-link {
 			}
 		}
 	}
-	// Continue to Payment Button
-	.basket-summary-submit {
-		&:hover {
-		}
-	}
-	// 
 	.js-shipping-opts {
 		padding-bottom: 20px;
 		font-size: 14px;
@@ -1949,8 +1906,6 @@ label, .contactform label, .advancedcontactform label {
             @media @mobile {
                 width: 100%;
             }
-        	 &:hover {
-            }
         }
     }
     &.profile {
@@ -1969,18 +1924,12 @@ label, .contactform label, .advancedcontactform label {
     &.signupform fieldset {
         button {
             vertical-align: top;
-        	 &:hover {
-            }
-        }
-        input {
         }
     }
     &.blogsearch {
         margin: 10px 0;
         label {
         	display: block;
-        }
-        input {
         }
         button {
             background-color: @font-swatch7-background-color;
@@ -1998,10 +1947,6 @@ label, .contactform label, .advancedcontactform label {
             	cursor: pointer;
             }
         }
-    }
-    &.button {
-    	button.btn:hover {
-    	}
     }
 }
 
@@ -2315,8 +2260,7 @@ hr.line {
 .widget {
 	&.responsiveslideshow {
 		margin-top: 20px;
-		.slideshow-widget-wrapper {
-		}
+
 		.slideshow-widget-controls {
 			.dot {
 			    height: 10px;
@@ -2473,8 +2417,6 @@ hr.line {
 					right: inherit;
 				}
 			}
-		}
-		.slideshow-image-list {
 		}
 	}
 }
