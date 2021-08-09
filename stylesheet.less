@@ -804,13 +804,25 @@ div.widget.extendednavigation > ul {
 .widget.feature .feature-bgimg .content {
 	text-align: center;
 
+	.spare {
+		display: block;
+		max-width: 1120px;
+		margin: 0 auto;
+		padding: 100px 30px;
+		box-sizing: content-box;
+
+		@media @mobile {
+			padding: 0 25px;
+		}
+	}
+
 	@media @mobile {
 		padding: 100px 20px;
 		-webkit-overflow-scrolling: touch;
 	}
 
 	h2 {
-		padding-bottom: 10px;
+		padding-bottom: 20px;
 
 		@media @tablet {
 			font-size: bkscale(@font-swatch8-font-size, 0.7);
