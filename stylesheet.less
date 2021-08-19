@@ -39,6 +39,8 @@ Typography
 -------------------- */
 
 h1, h2, h3, h4, h5, h6, [class*="contentgroup__h"] {
+    word-break: break-word;
+
     .style--light & {
         color: @contrast--light;
     }
@@ -61,6 +63,7 @@ h5 {
 
 blockquote {
     margin: 10px 0;
+	word-break: break-word;
 
     &:before {
         color: @color-swatch3;
@@ -1643,6 +1646,18 @@ select {
 
 	&::-ms-expand {
 		display: none;
+	}
+}
+
+// Radiobuttons, Checkboxes
+
+.contactform .option-item--radio,
+.contactform .option-item--checkbox,
+.advancedcontactform .option-item--radio,
+.advancedcontactform .option-item--checkbox {
+	label {
+		label;
+		word-break: break-word;
 	}
 }
 
