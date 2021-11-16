@@ -1,18 +1,12 @@
-/* ----------------------------------------
-Travelon CSS
----------------------------------------- */
+// Travelon CSS
 
-/* --------------------
- Imports & Includes
--------------------- */
+// Imports & Includes
 
 @import "@{templateCommon}/basekit-bootstrap.less";
 @tablet: ~"only screen and (max-width: 860px)";
 @mobile: ~"only screen and (max-width: 650px)";
 
-/* --------------------
-Mixins
--------------------- */
+// Mixins
 
 .border-radius(@radius: 6px) {
     -webkit-border-radius: @radius;
@@ -34,9 +28,7 @@ Mixins
 	transition: @prop @time @ease;
 }
 
-/* --------------------
-Typography
--------------------- */
+// Typography
 
 h1, h2, h3, h4, h5, h6, [class*="contentgroup__h"] {
     word-break: break-word;
@@ -112,9 +104,7 @@ a:not(.contentgroup__link),
     }
 }
 
-/* --------------------
-Language Selector
--------------------- */
+// Language Selector
 
 @language-padding: 0.5em;
 @language-line-height: @font-swatch7-line-height;
@@ -278,6 +268,7 @@ Language Selector
 				}
 			}
 		}
+
 		.language-selector--dark& {
 			background-color: fade(black, 20%);
 			
@@ -501,9 +492,7 @@ Language Selector
 	}
 }
 
-/* --------------------
-Main
--------------------- */
+// Main
 
 .contain {
 	padding: 40px;
@@ -522,9 +511,7 @@ Main
     box-sizing: border-box;
 }
 
-/* --------------------
-Header & Navigation
--------------------- */
+// Header & Navigation
 
 body {
 	 background-color: @color-swatch2;
@@ -875,9 +862,7 @@ div.widget.extendednavigation {
 	}
 }
 
-/* --------------------
-Feature
--------------------- */
+// Feature
 
 .widget.feature {
 	min-height: 100%;
@@ -892,6 +877,11 @@ Feature
 .widget.feature .feature-bgimg .content {
 	text-align: center;
 
+	@media @mobile {
+		padding: 100px 20px;
+		-webkit-overflow-scrolling: touch;
+	}
+
 	.spare {
 		display: block;
 		max-width: 1120px;
@@ -902,11 +892,6 @@ Feature
 		@media @mobile {
 			padding: 0 25px;
 		}
-	}
-
-	@media @mobile {
-		padding: 100px 20px;
-		-webkit-overflow-scrolling: touch;
 	}
 
 	h2 {
@@ -961,9 +946,7 @@ Feature
 	}
 }
 
-/* --------------------
-Line
--------------------- */
+// Line
 
 .widget.line {
     padding: 0;
@@ -987,9 +970,7 @@ hr.line {
     }
 }
 
-/* --------------------
-Gallery
--------------------- */
+// Gallery
 
 .widget.gallery ul li span.inner {
 	.title {
@@ -1160,9 +1141,7 @@ Gallery
 	}
 }
 
-/* --------------------
-Slideshow
--------------------- */
+// Slideshow
 
 .widget {
 	&.responsiveslideshow {
@@ -1352,9 +1331,7 @@ Slideshow
 	}
 }
 
-/* --------------------
-Scrollbars
--------------------- */
+// Scrollbars
 
 body, html {
 	-ms-overflow-style: none;
@@ -1365,9 +1342,7 @@ body, html {
 	height: 0px!important;
 }
 
-/* --------------------
-Embeds
--------------------- */
+// Embeds
 
 iframe {
 	max-width: 100%;
@@ -1377,9 +1352,7 @@ iframe {
     margin: 20px 0;
 }
 
-/* --------------------
-Forms
--------------------- */
+// Forms
 
 input,
 .widget.profile form fieldset input,
@@ -1773,9 +1746,7 @@ select {
 	}
 }
 
-/* --------------------
-Footer
--------------------- */
+// Footer
 
 .bk-footer {
 	.copyright {
@@ -1806,9 +1777,7 @@ Footer
     }
 }
 
-/* --------------------
-Blog
--------------------- */
+// Blog
 
 // Blog Post List
 
@@ -2078,9 +2047,7 @@ Blog
 	}
 }
 
-/* --------------------
-Menu
--------------------- */
+// Menu
 
 .widget {
     &.menusections {
@@ -2234,9 +2201,7 @@ Menu
     }
 }
 
-/* --------------------
-Ecommerce
--------------------- */
+// Ecommerce
 
 .widget.ecomproductslist {
 	margin-top: 40px;
