@@ -1376,6 +1376,14 @@ iframe {
 
 // Forms
 
+.signupform,
+.contactform,
+.advancedcontactform {
+	&__form-group {
+		margin-bottom: 1em;
+	}
+}
+
 input,
 .widget.profile form fieldset input,
 .widget.signupform fieldset input,
@@ -1532,8 +1540,11 @@ label,
     }
 }
 
-button.btn, .contactform button, .contactform button.btn, 
-.advancedcontactform button, .advancedcontactform button.btn, 
+button.btn,
+.contactform button,
+.contactform button.btn, 
+.advancedcontactform button,
+.advancedcontactform button.btn, 
 .widget.blogsearch button,
 a.contentgroup__link {
     padding: 8px 30px;
@@ -1649,14 +1660,24 @@ select {
 }
 
 // Radiobuttons, Checkboxes
+.contactform,
+.advancedcontactform {
+	.option-item--radio,
+	.option-item--checkbox {
+		display: flex;
+		align-items: start;
+		list-style-type: none;
 
-.contactform .option-item--radio,
-.contactform .option-item--checkbox,
-.advancedcontactform .option-item--radio,
-.advancedcontactform .option-item--checkbox {
-	label {
-		label;
-		word-break: break-word;
+		input {
+			margin: 5px 10px 0 0;
+			height: @font-swatch4-line-height;
+		}
+	
+		label {
+			label;
+			margin: 5px 0 0;
+			word-break: break-word;
+		}
 	}
 }
 
