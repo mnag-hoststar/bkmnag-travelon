@@ -1394,7 +1394,7 @@ select {
     padding-left: 8px;
     padding-right: 8px;
     background-color: @color-swatch1;
-    height: 40px;
+    height: 45px;
     .transition(all 0.5s ease);
 
     .style--light & {
@@ -1450,7 +1450,6 @@ select {
 
     @media @mobile {
         width: 100%;
-        margin-bottom: 10px;
     }
 }
 
@@ -1548,7 +1547,7 @@ button.btn,
 .widget.blogsearch button,
 a.contentgroup__link {
     padding: 8px 30px;
-    min-height: 40px;
+    min-height: 45px;
     .transition(all 0.5s ease);
     text-decoration: none;
 
@@ -1598,6 +1597,11 @@ a.contentgroup__link {
 
 .widget.tweet a,
 .widget.paypalbuynow .widget.button.paypal {
+    display: inline-block;
+	background-position: 25px;
+	padding: 10px 30px 10px 60px;
+    min-height: 45px;
+
     .style--light & {
         background-color: @color--dark;
         color: @contrast--dark;
@@ -1629,10 +1633,6 @@ a.contentgroup__link {
             color: @contrast--accent;
         }
     }
-}
-
-.widget.tweet a {
-    padding: 10px 10px 10px 40px;
 }
 
 // Dropdowns
@@ -1683,62 +1683,123 @@ select {
 
 // Contact Forms
 
-.widget {
-    &.contactform {
-        margin: 20px 0;
+.contactform {
+	margin: 20px 0;
 
-        button.btn {
-            @media @mobile {
-                width: 100%;
-            }
-        }
-    }
+	button.btn {
+		@media @mobile {
+			width: 100%;
+		}
+	}
+}
 
-    &.profile {
-        form {
-            button {
-                position: relative;
-                left: -4px;
-                vertical-align: top;
-                padding: 8px 30px;
-                @media @mobile {
-                    left: 0;
-                }
-            }
-        }
-    }
+.widget.profile {
+	form {
+		button {
+			position: relative;
+			left: -4px;
+			vertical-align: top;
+			padding: 8px 30px;
 
-    &.signupform fieldset {
-        button {
-            vertical-align: top;
-        }
-    }
+			@media @mobile {
+				left: 0;
+			}
+		}
+	}
+}
 
-    &.blogsearch {
-        margin: 10px 0;
+.signupform {
+	.form-group {
+		display: flex;
+		flex-wrap: wrap;
+	}
 
-        label {
-        	display: block;
-        }
+	input {
+		flex-grow: 1;
+		margin-right: 5px;
 
-        button {
-            background-color: @font-swatch7-background-color;
-            font-family: @font-swatch7-font-family;
-            font-size: @font-swatch7-font-size;
-            font-weight:  @font-swatch7-font-weight;
-            line-height:@font-swatch7-line-height;
-            color: @font-swatch7-color;
-            letter-spacing: @font-swatch7-letter-spacing;
-            border: 0;
-            margin: 0;
-            text-decoration: none;
+		@media @mobile {
+			margin-right: 0;
+			margin-bottom: 10px;
+		}
+	
+		.responsivecolumns & {
+			margin-right: 0;
+			margin-bottom: 10px;
+		}
+	}
 
-        	 &:hover {
-            	background-color: @font-swatch7-background-color-hover;
-            	cursor: pointer;
-            }
-        }
-    }
+	fieldset {
+		button {
+			vertical-align: top;
+			padding: 5px 30px;
+
+			@media @mobile {
+				left: 0;
+				width: 100%;
+			}
+		
+			.responsivecolumns & {
+				display: block;
+				width: 100%;
+			}
+		}
+	}
+}
+
+.blogsearch {
+	margin: 10px 0;
+
+	.form-group {
+		display: flex;
+		flex-wrap: wrap;
+	}
+
+	input {
+		flex-grow: 1;
+		margin-right: 5px;
+
+		@media @mobile {
+			margin-right: 0;
+			margin-bottom: 10px;
+		}
+	
+		.responsivecolumns & {
+			margin-right: 0;
+			margin-bottom: 10px;
+		}
+	}
+
+	label {
+		display: block;
+		width: 100%;
+	}
+
+	button {
+		background-color: @font-swatch7-background-color;
+		font-family: @font-swatch7-font-family;
+		font-size: @font-swatch7-font-size;
+		font-weight:  @font-swatch7-font-weight;
+		line-height:@font-swatch7-line-height;
+		color: @font-swatch7-color;
+		letter-spacing: @font-swatch7-letter-spacing;
+		border: 0;
+		margin: 0;
+		text-decoration: none;
+
+		@media @mobile {
+			width: 100%;
+		}
+	
+		.responsivecolumns & {
+			width: 100%;
+		}
+
+		&:hover {
+			background-color: @font-swatch7-background-color-hover;
+			cursor: pointer;
+		}
+	}
 }
 
 // Privacy Checkboxes
@@ -1795,7 +1856,6 @@ select {
 	.copyright {
 		.contain {
 			border-top: 1px solid darken(@color-swatch2, 10%);
-			padding: 20px;
 		}
 
 		.widget.profile {
@@ -1803,17 +1863,55 @@ select {
 			width: 100%;
 			color: @font-swatch5-color;
 			text-align: center;
-			
-			form fieldset input {
-				width: 100%;
-			}
-	
-			form button {
-				word-break: break-word;
-				height: auto;
-				width: auto;
-				margin: 10px 0;
-				line-height: 1.25em;
+
+			form {
+				.form-group {
+					display: flex;
+					align-items: center;
+
+					@media @mobile {
+						flex-wrap: wrap;
+					}
+				
+					.responsivecolumns & {
+						flex-wrap: wrap;
+					}
+				}
+				
+				fieldset input {
+					flex-grow: 1;
+					margin-right: 5px;
+					min-width: 75%;
+
+					@media @mobile {
+						margin-right: 0;
+						margin-bottom: 10px;
+						width: 100%;
+					}
+				
+					.responsivecolumns & {
+						margin-right: 0;
+						margin-bottom: 10px;
+						width: 100%;
+					}
+				}
+		
+				button {
+					position: static;
+					word-break: break-word;
+					height: auto;
+					width: auto;
+					margin: 0;
+					line-height: 1.25em;
+
+					@media @mobile {
+						width: 100%;
+					}
+				
+					.responsivecolumns & {
+						width: 100%;
+					}
+				}
 			}
 		}
 	}
