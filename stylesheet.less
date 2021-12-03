@@ -778,8 +778,10 @@ div.widget.extendednavigation {
 		&:after {
 			content: '';
 			position: absolute;
+			top: auto;
 			left: 30px;
 			right: auto;
+			bottom: 0;
 			width: 30px;
 			height: 1px;
 			background: darken(@color-swatch7, 10%);
@@ -797,6 +799,7 @@ div.widget.extendednavigation {
 
 		&:after {
 			bottom: 30px;
+			box-shadow: none;
 		}
 	}
 
