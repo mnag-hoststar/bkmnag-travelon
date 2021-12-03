@@ -20,12 +20,12 @@
     appearance: @appearance;
 }
 
-.transition (@prop: all, @time: 0.5s, @ease: ease) {
-	-webkit-transition: @prop @time @ease;  
-	-moz-transition: @prop @time @ease;
-	-ms-transition: @prop @time @ease; 
-	-o-transition: @prop @time @ease;
-	transition: @prop @time @ease;
+.transition (@transition...) {
+	-webkit-transition: @transition;  
+	-moz-transition: @transition;
+	-ms-transition: @transition; 
+	-o-transition: @transition;
+	transition: @transition;
 }
 
 // Typography
@@ -122,11 +122,7 @@ a:not(.contentgroup__link),
         opacity: 1;
 		box-sizing: content-box;
 		margin: 0 auto;
-		-webkit-transition: opacity 0.3s ease;
-        -moz-transition: opacity 0.3s ease;
-        -ms-transition: opacity 0.3s ease;
-        -o-transition: opacity 0.3s ease;
-        transition: opacity 0.3s ease;
+        .transition(opacity 0.3s ease);
 	}
 
 	&.language-selector--light,
@@ -248,7 +244,7 @@ a:not(.contentgroup__link),
 		max-width: 100%;
 		border-radius: @language-padding*3;
 		border: 1px solid fade(@color-swatch1, 50%);
-		.transition(all, 0.75s, ease);
+		.transition(all 0.75s ease);
 	}
 	
 	// Link Color
@@ -523,7 +519,7 @@ header.bk-header {
 	flex-direction: row-reverse;
 	align-items: center;
 	min-height: 81px;
-	.transition( all, 0.5s, ease);
+	.transition(all 0.5s ease);
 	background: lighten(@color-swatch6, 5%);
 	padding: 0 30px 0 130px;
 	right: 0!important;
@@ -617,31 +613,6 @@ header.bk-header {
 	}
 }
 
-.bk-nav {
-	position: fixed;
-	top: 0;
-	background: fade(@color-swatch6, 80%);
-	height: 100%;
-	left: -320px;
-	width: 320px;
-	.transition(all, 0.25s, ease);
-    z-index: 9999;
-	
-	@media only screen and (max-height: 450px) {
-		height: auto;
-	}
-	
-    @media @mobile {
-    	left: -300px;
-    	width: 300px;
-    }
-
-	.menu-active & {
-		position: fixed;
-		left: 0;
-	}
-}
-
 .widget.socialicons,
 .widget.profile .bk-profile-socialicons {
 	background-color: transparent;
@@ -690,9 +661,38 @@ header.bk-header {
 	}
 }
 
+.bk-nav {
+	position: fixed;
+	overflow-y: auto;
+	overflow-x: hidden;
+	top: 0;
+	background: fade(@color-swatch6, 80%);
+	height: 100%;
+	left: -320px;
+	width: 320px;
+	.transition(all 0.25s ease);
+    z-index: 9999;
+	display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+	
+	@media only screen and (max-height: 450px) {
+		height: auto;
+	}
+	
+    @media @mobile {
+		left: -100%;
+    	width: 100%;
+		background: @color-swatch6;
+    }
+
+	.menu-active & {
+		left: 0;
+	}
+}
+
 div.widget .extendednavigation,
 div.widget.extendednavigation {
-	padding: 30px 15px;
 	width: 100%;
 
     ul,
@@ -718,7 +718,7 @@ div.widget.extendednavigation {
             cursor: pointer;
 			
             &:hover { 
-            	.transition( all, 0.5s, ease);
+            	.transition(all 0.5s ease);
 
 				ul {
 					position: static;
@@ -813,8 +813,8 @@ div.widget.extendednavigation {
 	}
 
 	a.pull {
-		position: absolute;
-		left: 100%;
+		position: fixed;
+		left: 0;
 		top: 0; 
 		display: inline-block;
 		overflow: hidden;
@@ -824,41 +824,75 @@ div.widget.extendednavigation {
 		height: 21px;
 		padding: 30px;
 		box-sizing: content-box;
-		.transition(all, 0.25s, ease);
+		background: fade(@color-swatch6, 80%);
+		.transition(all 0.25s ease);
 
 		@media @mobile {
 			background: fade(@color-swatch6, 80%);
 			padding: 25px;
 		}
 
-	    &:hover {
-	    	.transition(all, 0.5s, ease);
-	    }
-
+		&:before,
 		&:after {
 			content: '';
 			position: absolute;
-			top: 30px;
 			left: 30px;
 			right: auto;
 			width: 30px;
 			height: 1px;
 			background: darken(@color-swatch7, 10%);
-			box-shadow: 0 10px 0 darken(@color-swatch7, 10%), 0 20px 0 darken(@color-swatch7, 10%);
+			.transition(all 0.25s ease);
 
 			@media @mobile {
-				top: 25px;
 				left: 25px;
 			}
 		}
 
-		&.nav-scrolled {
-			background: fade(@color-swatch6, 80%);
+		&:before {
+			top: 30px;
+			box-shadow: 0 10px 0 darken(@color-swatch7, 10%);
+		}
+
+		&:after {
+			bottom: 30px;
+		}
+	}
+
+	ul.open + a.pull {
+		left: 320px;
+	
+		@media @mobile {
+			left: auto;
+			right: 0;
+		}
+
+		&:before,
+		&:after {
+			top: 50%;
+		}
+
+		&:before {
+			transform: rotate(45deg);
+			box-shadow: 30px 0 0 fade(@color-swatch7, 0);
+		}
+
+		&:after {
+			transform: rotate(315deg);
 		}
 	}
 
 	.bk-overlay {
 		width: 100%;
+	}
+}
+
+div.widget .extendednavigation {
+	> ul {
+		padding: 30px 15px;
+	
+		@media @mobile {
+			padding: 70px 15px 30px	15px;
+		}
 	}
 }
 
@@ -931,12 +965,12 @@ div.widget.extendednavigation {
 		padding: 0px 30px 3px;
 		margin-top: 15px;
 		border-radius: 1.5em;
-		.transition(all, 0.75s, ease);
+		.transition(all 0.75s ease);
 
 		&:hover {
 			background-color: @color-swatch1;
 			color: black;
-			.transition(all, 0.75s, ease);
+			.transition(all 0.75s ease);
 		}
 
 		@media @mobile {
@@ -995,7 +1029,7 @@ hr.line {
 }
 
 .widget.gallery .inner:hover .image-data {
-	.transition( opacity, 0.5s, ease);
+	.transition(opacity 0.5s ease);
 	opacity: 1;
 }
 
@@ -1331,17 +1365,6 @@ hr.line {
 	}
 }
 
-// Scrollbars
-
-body, html {
-	-ms-overflow-style: none;
-}
-
-::-webkit-scrollbar {
-	width: 0px!important;
-	height: 0px!important;
-}
-
 // Embeds
 
 iframe {
@@ -1365,7 +1388,7 @@ select {
     padding-right: 8px;
     background-color: @color-swatch1;
     height: 40px;
-    .transition(all, 0.5s, ease);
+    .transition(all 0.5s ease);
 
     .style--light & {
         background-color: @color--light;
@@ -1387,7 +1410,7 @@ select {
 
     &:hover {
         border: 1px solid darken(@color-swatch2, 15%);
-        .transition(all, 0.5s, ease);
+        .transition(all 0.5s ease);
 
         .style--light & {
             border-color: darken(@color--light, 20%);
@@ -1431,7 +1454,7 @@ textarea {
     background-color: @color-swatch1;
     padding: 10px;
     height: 100px;
-    .transition(all, 0.5s, ease);
+    .transition(all 0.5s ease);
 
     .style--light & {
         background-color: @color--light;
@@ -1453,7 +1476,7 @@ textarea {
 
     &:hover {
         border: 1px solid darken(@color-swatch2, 15%)!important;
-        .transition(all, 0.5s, ease);
+        .transition(all 0.5s ease);
 
         .style--light & {
             border-color: darken(@color--light, 20%);
@@ -1516,7 +1539,7 @@ button.btn, .contactform button, .contactform button.btn,
 a.contentgroup__link {
     padding: 8px 30px;
     min-height: 40px;
-    .transition(all, 0.5s, ease);
+    .transition(all 0.5s ease);
     text-decoration: none;
 
     .style--light & {
@@ -1539,7 +1562,7 @@ a.contentgroup__link {
 	&:active {
         background-color: @font-swatch7-background-color-hover;
         cursor: pointer;
-        .transition(all, 0.5s, ease);
+        .transition(all 0.5s ease);
 
         .style--light & {
             background-color: lighten(@color--dark, 5%);
