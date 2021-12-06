@@ -795,11 +795,19 @@ div.widget.extendednavigation {
 		&:before {
 			top: 30px;
 			box-shadow: 0 10px 0 darken(@color-swatch7, 10%);
+
+			@media @mobile {
+				top: 25px;
+			}
 		}
 
 		&:after {
 			bottom: 30px;
 			box-shadow: none;
+
+			@media @mobile {
+				bottom: 25px;
+			}
 		}
 	}
 
