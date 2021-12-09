@@ -3,8 +3,13 @@
 // Imports & Includes
 
 @import "@{templateCommon}/basekit-bootstrap.less";
+
+@tablet-large: ~"only screen and (min-width: 930px)";
 @tablet: ~"only screen and (max-width: 860px)";
 @mobile: ~"only screen and (max-width: 650px)";
+@mobile-small: ~"only screen and (max-height: 450px)";
+@mobile-smaller: ~"only screen and (max-height: 420px)";
+@mobile-smallest: ~"only screen and (max-width: 380px)";
 
 // Mixins
 
@@ -447,7 +452,7 @@ a:not(.contentgroup__link),
 		text-overflow: ellipsis;
 		
 		.language-selector--flag-text& {
-			@media only screen and (max-width: 380px) {
+			@media @mobile-smallest {
 				display: none;
 			}
 		}
@@ -574,7 +579,7 @@ header.bk-header {
 				max-width: 80%;
 			}
 
-			@media only screen and (max-height: 450px) {
+			@media @mobile-small {
 				max-width: 80%;
 			}
 		}
@@ -596,7 +601,7 @@ header.bk-header {
 				font-size: bkscale(@font-swatch10-font-size, 0.7);
 			}
 
-			@media only screen and (max-height: 450px) {
+			@media @mobile-small {
 				font-size: bkscale(@font-swatch10-font-size, 0.7);
 			}
 		}
@@ -618,7 +623,7 @@ header.bk-header {
     flex-direction: column;
     justify-content: space-between;
 	
-	@media only screen and (max-height: 450px) {
+	@media @mobile-small {
 		height: auto;
 	}
 	
@@ -940,7 +945,7 @@ div.widget .extendednavigation {
 					line-height: bkscale(@font-swatch8-line-height, 0.7);
 				}
 		
-				@media only screen and (max-height: 420px) {
+				@media @mobile-smaller {
 					font-size: bkscale(@font-swatch8-font-size, 0.55);
 					line-height: bkscale(@font-swatch8-line-height, 0.7);
 				}
@@ -2658,12 +2663,12 @@ select {
 	.image-wrap {
 		background-position: -10000%;
 
-		@media (max-width: 650px) {
+		@media @mobile {
 			max-width: 100%;
 		}
 
 		img {
-			@media (max-width: 650px) {
+			@media @mobile {
 				max-width: 100%;
 			}
 		}
@@ -2784,7 +2789,7 @@ select {
 				&:last-child {
 					text-align: right;
 
-					@media (max-width: 650px) {
+					@media @mobile {
 						display: none;
 					}
 				}
@@ -2798,7 +2803,7 @@ select {
 		// Item Row
 
 		tr td {
-			@media (max-width: 650px) {
+			@media @mobile {
 				display: table;
 				width: 100%;
 				border-bottom: 0;
@@ -2811,7 +2816,7 @@ select {
 			}
 
 			&:nth-child(2) {
-				@media (max-width: 650px) {
+				@media @mobile {
 					padding-left: 0;
 					padding-bottom: 20px;
 				}
@@ -2825,14 +2830,14 @@ select {
 			&:nth-child(1) {
 				width: 25%;
 
-				@media (max-width: 650px) {
+				@media @mobile {
 					padding-bottom: 0;
 					width: 100%;
 				}
 			}
 
 			&:last-child {
-				@media (max-width: 650px) {
+				@media @mobile {
 					padding: 6px 0;
 					margin: 0 0 15px;
 				}
@@ -2840,7 +2845,7 @@ select {
 		}
 
 		tr:last-child td:last-child {
-			@media (max-width: 650px) {
+			@media @mobile {
 				border-top: 0;
 				margin-top: 0;
 				padding-top: 0;
