@@ -6,91 +6,91 @@
 // Template styling resets
 
 #migrated {
-    &.edit {
-        @media @tablet-large {
-            .bk-pt-home .bk-header {
-                width: ~"calc(100% - 200px)";
-            }
+	&.edit {
+		@media @tablet-large {
+			.bk-pt-home .bk-header {
+				width: ~"calc(100% - 200px)";
+			}
 
-            [data-widget-type="extendednavigation"] .widget-overlay {
-                left: 420px;
-                width: 100px;
-            }
+			[data-widget-type="extendednavigation"] .widget-overlay {
+				left: 420px;
+				width: 100px;
+			}
 
-            .widget.extendednavigation a.pull {
-                left: 460px;
-            }
-        }
-    }
+			.widget.extendednavigation a.pull {
+				left: 460px;
+			}
+		}
+	}
 
-    #main > .contain {
-        max-width: 100%;
-        padding: 0;
-    }
+	#main > .contain {
+		max-width: 100%;
+		padding: 0;
+	}
 }
 
 // Row improvments
 
 [data-rowtype="gallery-4a"] .widget.gallery .inner .image-data {
-    .align-items(center);
-    .flex-display;
-    .flex-direction(column);
-    .justify-content(center);
-    text-align: center;
-    top: 0;
+	.align-items(center);
+	.flex-display;
+	.flex-direction(column);
+	.justify-content(center);
+	text-align: center;
+	top: 0;
 }
 
 // Hides the caption for the logo section
 [class*="row--logos"] .widget.gallery .image-data {
-    display: none;
-    visibility: hidden;
+	display: none;
+	visibility: hidden;
 }
 
 // Re-add the reset styles
 
 #migrated {
-    .empty-zone,
-    #page-zones__main:empty,
-    #page-zones__main > .widget:not([data-name="row"]),
-    [data-name="row"] .row:not(.row--width-no-padding) .row__container {
-        margin-left: auto;
-        margin-right: auto;
-        max-width: 1200px;
-        width: ~"calc(100% - 80px)";
-    }
+	.empty-zone,
+	#page-zones__main:empty,
+	#page-zones__main > .widget:not([data-name="row"]),
+	[data-name="row"] .row:not(.row--width-no-padding) .row__container {
+		margin-left: auto;
+		margin-right: auto;
+		max-width: 1200px;
+		width: ~"calc(100% - 80px)";
+	}
 
-    // Move spacing to first widget in the main zone (not sections)
-    .edit #page-zones__main-overlay + .widget:not([data-name="row"]),
-    #page-zones__main > .widget:not([data-name="row"]):first-child {
-        margin-top: 40px;
+	// Move spacing to first widget in the main zone (not sections)
+	.edit #page-zones__main-overlay + .widget:not([data-name="row"]),
+	#page-zones__main > .widget:not([data-name="row"]):first-child {
+		margin-top: 40px;
 
-        @media @mobile {
-            margin-top: 20px;
-        }
-    }
+		@media @mobile {
+			margin-top: 20px;
+		}
+	}
 
-    // Move spacing to last widget in the main zone (not sections)
-    #page-zones__main > .widget:not([data-name="row"]):last-child {
-        margin-bottom: 40px;
+	// Move spacing to last widget in the main zone (not sections)
+	#page-zones__main > .widget:not([data-name="row"]):last-child {
+		margin-bottom: 40px;
 
-        @media @mobile {
-            margin-bottom: 20px;
-        }
-    }
+		@media @mobile {
+			margin-bottom: 20px;
+		}
+	}
 
-    // Add spacing to the top of a widget when it follows a section
-    #page-zones__main > .row + .widget:not([data-name="row"]) {
-        margin-top: 20px;
-    }
+	// Add spacing to the top of a widget when it follows a section
+	#page-zones__main > .row + .widget:not([data-name="row"]) {
+		margin-top: 20px;
+	}
 
-    // Empy zone spacing
-    &.edit #page-zones__main:empty {
-        margin-top: 40px;
-        margin-bottom: 40px;
+	// Empy zone spacing
+	&.edit #page-zones__main:empty {
+		margin-top: 40px;
+		margin-bottom: 40px;
 
-        @media @mobile {
-            margin-top: 20px;
-            margin-bottom: 20px;
-        }
-    }
+		@media @mobile {
+			margin-top: 20px;
+			margin-bottom: 20px;
+		}
+	}
 }
