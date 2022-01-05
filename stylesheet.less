@@ -1763,6 +1763,7 @@ input,
 .widget.signupform fieldset input,
 input.blog-search-input, .widget.signupform input,
 .widget.blogsearch input,
+.userregistration fieldset input,
 select {
 	border: 1px solid darken(@color-swatch2, 5%);
 	padding-left: 8px;
@@ -1922,6 +1923,7 @@ button.btn,
 .contactform button.btn, 
 .advancedcontactform button,
 .advancedcontactform button.btn, 
+.userregistration fieldset .userregistrationbtn,
 .widget.blogsearch button,
 a.contentgroup__link {
 	padding: 8px 30px;
@@ -2225,7 +2227,7 @@ footer.bk-footer .widget.profile .form-group.profile__form-group.profile__form-g
 	}
 }
 
-// Contact Forms
+// Contact Form
 
 .contactform {
 	margin: 20px 0;
@@ -2251,6 +2253,8 @@ footer.bk-footer .widget.profile .form-group.profile__form-group.profile__form-g
 		}
 	}
 }
+
+// Signup Form
 
 .signupform {
 	.form-group {
@@ -2290,6 +2294,44 @@ footer.bk-footer .widget.profile .form-group.profile__form-group.profile__form-g
 		}
 	}
 }
+
+// Registration Form
+
+.widget.userregistration {
+	fieldset {
+		margin: 0 auto;
+		padding: 0;
+		border: none;
+		max-width: 400px;
+		
+		@media @mobile {
+			max-width: none;
+		}
+
+		.responsivecolumns & {
+			max-width: none;
+		}
+
+		input {
+			width: 100%;
+			box-sizing: border-box;
+		}
+
+		.error {
+			padding: 20px 0 0;
+
+			&[style*="display: block"] {
+				padding: 20px 0;
+			}
+
+			&[style*="display: none"] {
+				display: block !important;
+			}
+		}
+	}
+}
+
+// Blog Search
 
 .blogsearch {
 	margin: 10px 0;
