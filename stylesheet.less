@@ -1827,6 +1827,10 @@ select {
 	height: 45px;
 	.transition(all 0.5s ease);
 
+	@media @mobile {
+		width: 100%;
+	}
+
 	.style--light & {
 		background-color: @color--light;
 		border-color: darken(@color--light, 10%);
@@ -1876,10 +1880,6 @@ select {
 		.style--dark & {
 			border-color: lighten(@color--dark, 30%);
 		}
-	}
-
-	@media @mobile {
-		width: 100%;
 	}
 }
 
@@ -2106,6 +2106,11 @@ select {
 
 	&::-ms-expand {
 		display: none;
+	}
+
+	option {
+		background-color: @color-swatch1;
+		color: @font-swatch5-color;
 	}
 }
 
