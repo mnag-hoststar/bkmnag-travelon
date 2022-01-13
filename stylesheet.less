@@ -3132,34 +3132,41 @@ footer.bk-footer .widget.profile .form-group.profile__form-group.profile__form-g
 // Single Product
 
 .widget.ecomproduct {
-	.ecom-product .ecom-product-preview-image-wrap {
-		background-color: @color-swatch1;
-		background-image: none !important;
-	}
-
-	.ecom-product-title {
-		font-size: @font-swatch2-font-size;
-		margin-top: 10px;
-		padding-bottom: 5px;
-	}
-
-	.ecom-product-price {
-		color: lighten(@color-swatch5, 20%);
-		font-size: bkscale(@font-swatch5-font-size, 1.25);
-	}
-
-	.ecom-product .btn {
-		margin: 20px 20px 0 0;
-	}
-
-	.ecom-product-add-to-cart-btn-wrapper, 
-	.ecom-product-go-to-checkout-btn-wrapper.js-ecom-product-go-to-checkout-btn-wrapper {
-		display: table-cell;
-	}
+	.ecom-product {
+		.ecom-product-preview-image-wrap {
+			background-color: @color-swatch1;
+			background-image: none !important;
+		}
 	
-	.ecom-product-go-to-checkout-btn-wrapper.js-ecom-product-go-to-checkout-btn-wrapper {
-		@media @mobile {
-			padding-left: 20px;
+		&-title {
+			font-size: @font-swatch2-font-size;
+			margin-top: 10px;
+			padding-bottom: 5px;
+		}
+	
+		&-price {
+			color: lighten(@color-swatch5, 20%);
+			font-size: bkscale(@font-swatch5-font-size, 1.25);
+		}
+	
+		.btn {
+			margin: 20px 20px 0 0;
+		}
+	
+		&-add-to-cart-btn-wrapper, 
+		&-go-to-checkout-btn-wrapper.js-ecom-product-go-to-checkout-btn-wrapper {
+			display: table-cell;
+		}
+		
+		&-go-to-checkout-btn-wrapper.js-ecom-product-go-to-checkout-btn-wrapper {
+			@media @mobile {
+				padding-left: 20px;
+			}
+		}
+	
+		.btn.ecom-product-add-to-cart-btn .text:before {
+			display: none;
+			background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAQAAAC1+jfqAAAAAnNCSVQICFXsRgQAAAAJcEhZcwAAAcIAAAHCAeg8fVQAAAAZdEVYdFNvZnR3YXJlAHd3dy5pbmtzY2FwZS5vcmeb7jwaAAAAuUlEQVQoz5WRMQtBYRSGn8FOYb7ZTBa7KIPyL2S7JkliMVoo46VuNhYlCwaDQpFJGZTwAySLmTNY7vfdLnp7z7s8nXO+8/HCW/wEYJLwBmJYdL+MYMNAUcsJVCkSpUle6lacZOwEIjyYcmQn9S6+kFNewZwsNjUy7MUrwipQYCKyqXCmwUK7AymuHFgz4sYSUwc6GAQ+8rtckj5P2b/HUPJESAfK1LEk07SZuXUIUsKQ9Mm68f8+y0tvuuTWGQUQxH4AAAAASUVORK5CYII5acb2b252b9e4454aa71356570e6ae22');
 		}
 	}
 	
@@ -3168,11 +3175,6 @@ footer.bk-footer .widget.profile .form-group.profile__form-group.profile__form-g
 		background: transparent;
 		color: @color-swatch3;
 		padding: 0;
-	}
-	
-	.ecom-product .btn.ecom-product-add-to-cart-btn .text:before {
-		display: none;
-		background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAQAAAC1+jfqAAAAAnNCSVQICFXsRgQAAAAJcEhZcwAAAcIAAAHCAeg8fVQAAAAZdEVYdFNvZnR3YXJlAHd3dy5pbmtzY2FwZS5vcmeb7jwaAAAAuUlEQVQoz5WRMQtBYRSGn8FOYb7ZTBa7KIPyL2S7JkliMVoo46VuNhYlCwaDQpFJGZTwAySLmTNY7vfdLnp7z7s8nXO+8/HCW/wEYJLwBmJYdL+MYMNAUcsJVCkSpUle6lacZOwEIjyYcmQn9S6+kFNewZwsNjUy7MUrwipQYCKyqXCmwUK7AymuHFgz4sYSUwc6GAQ+8rtckj5P2b/HUPJESAfK1LEk07SZuXUIUsKQ9Mm68f8+y0tvuuTWGQUQxH4AAAAASUVORK5CYII5acb2b252b9e4454aa71356570e6ae22');
 	}
 
 	.product-category-items span {
@@ -3186,6 +3188,21 @@ footer.bk-footer .widget.profile .form-group.profile__form-group.profile__form-g
 	
 		.style--dark & {
 			color: @contrast--dark;
+		}
+	}
+
+	.product-actions {
+		button {
+			margin-bottom: 1em;
+			text-align: center;
+        
+			@media @mobile {
+				width: 100%;
+			}
+
+			&:before {
+				float: none;
+			}
 		}
 	}
 }
