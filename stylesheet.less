@@ -303,17 +303,21 @@ table {
 	border-top: 1px solid @font-swatch5-color;
 	margin: 0;
 	hyphens: auto;
+	color: @font-swatch5-color;
 
 	.style--light & {
 		border-top-color: @contrast--light;
+		color: @contrast--light;
 	}
 
 	.style--accent & {
 		border-top-color: @contrast--accent;
+		color: @contrast--accent;
 	}
 
 	.style--dark & {
 		border-top-color: @contrast--dark;
+		color: @contrast--dark;
 	}
 }
 
@@ -360,7 +364,7 @@ th {
 }
 
 td {
-	border-bottom: 1px dotted @font-swatch5-color;
+	border-bottom: 1px solid fade(@font-swatch5-color, 60%);
 	padding: 1em 0.5em;
 	font-family: @font-swatch5-font-family;
 	font-weight: @font-swatch5-font-weight;
