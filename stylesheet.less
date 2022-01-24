@@ -1031,126 +1031,20 @@ header.bk-header {
 	}
 }
 
-div.widget .extendednavigation,
-div.widget.extendednavigation {
+.widget.navigation,
+div.widget.extendednavigation,
+div.widget .extendednavigation {
 	width: 100%;
 
-	ul,
-	> ul {
-		display: block;
-		padding: 0;
-		list-style: none;
+	.bk-overlay {
 		width: 100%;
-
-		&.align-left,
-		&.align-center,
-		&.align-right {
-			float: none;
-		}
-		
-		@media @tablet {
-			display: block;
-		}
-		
-		li {
-			display: block;
-			padding: 10px 0;
-			cursor: pointer;
-			
-			&:hover { 
-				.transition(all 0.5s ease);
-
-				ul {
-					position: static;
-					z-index: auto;
-					padding: 0;
-					margin: 8px 0;
-					min-width: auto;
-					max-width: none;
-					background-color: transparent;
-				}
-			}
-			
-			&:before {
-				display: inline-block;
-				text-decoration: inherit;
-				width: 1em;
-				color: white;
-				margin-right: 12px;
-				text-align: center;
-				font-variant: normal;
-				font-size: 0.75em;
-				text-transform: none;
-				line-height: 1em;
-			}
-			
-			ul {
-				background: transparent;
-				border: 2px solid fade(@color-swatch1, 10%);
-				position: relative;
-				margin: 8px 0;
-				width: 100%;
-
-				&:hover {
-					color: @font-swatch6-color-hover;
-				}
-
-				.text {
-					&:hover {
-						color: @font-swatch6-color;
-					}
-				}
-			}
-
-			@media @tablet {
-				border-bottom: none;
-			}
-
-			&.folder {
-				color: @font-swatch6-color;
-
-				&:after {
-					top: 22px;
-				}
-
-				.text {
-					color: @font-swatch6-color;
-					word-break: break-word;
-				}
-
-				ul {
-					display: none;
-				}
-
-				&.folder-open ul {
-					display: block;
-				}
-			}
-		}
-	}
-
-	.widget-overlay {
-		right: -100px;
-		left: 320px;
-		
-		.menu-active & {
-			left: 320px;
-		}
-		
-		> ul {
-				display: inline-block;
-				font-size: 0;
-			
-			li {
-				display: inline-block;
-				padding: 0;
-			}
-		}
 	}
 
 	.menu-active &#slide-menu { 
 		right: 0px; 
 	}
+
+	// Mobile Menu
 
 	a.pull {
 		position: fixed;
@@ -1232,20 +1126,138 @@ div.widget.extendednavigation {
 		}
 	}
 
-	.bk-overlay {
-		width: 100%;
-	}
-}
+	// Menu Points
 
-div.widget .extendednavigation {
-	> ul {
+	ul {
+		display: block;
+		padding: 0;
+		list-style: none;
+		width: 100%;
 		padding: 30px 15px;
+
+		&.align-left,
+		&.align-center,
+		&.align-right {
+			float: none;
+		}
+		
+		@media @tablet {
+			display: block;
+		}
 	
 		@media @mobile {
 			padding: 70px 15px 30px	15px;
 		}
+		
+		li {
+			display: block;
+			padding: 10px 0;
+			cursor: pointer;
+			
+			&:before {
+				display: inline-block;
+				text-decoration: inherit;
+				width: 1em;
+				color: white;
+				margin-right: 12px;
+				text-align: center;
+				font-variant: normal;
+				font-size: 0.75em;
+				text-transform: none;
+				line-height: 1em;
+			}
+
+			@media @tablet {
+				border-bottom: none;
+			}
+
+			&.folder {
+				color: @font-swatch6-color;
+	
+				&:after {
+					content: none;
+				}
+
+				> .text {
+					color: @font-swatch6-color;
+					word-break: break-word;
+		
+					// Folder Arrow
+
+					&:after {
+						content: '';
+						display: block;
+						position: absolute;
+						top: 50%;
+						right: 0.5em;
+						border: 2px solid fade(@font-swatch6-color, 60%);
+						border-top: transparent;
+						border-left: transparent;
+						transform: rotate(45deg);
+						margin-top: -0.5em;
+						width: 0.5em;
+						height: 0.5em;
+					}
+				
+					&:hover:after {
+						border-color: @font-swatch6-color-hover;
+					}
+				}
+
+				ul {
+					display: none;
+					position: static;
+					z-index: auto;
+					padding: 0;
+					margin: 8px 0;
+					min-width: auto;
+					max-width: none;
+					background-color: transparent;
+					border: 2px solid fade(@color-swatch1, 10%);
+					position: relative;
+					margin: 8px 0;
+					width: 100%;
+					.transition(all 0.5s ease);
+		
+					&:hover {
+						color: @font-swatch6-color-hover;
+					}
+	
+					.text {
+						&:hover {
+							color: @font-swatch6-color;
+						}
+					}
+				}
+
+				&.folder-open ul {
+					display: block;
+				}
+			}
+		}
+	}
+
+	.widget-overlay {
+		right: -100px;
+		left: 320px;
+		
+		.menu-active & {
+			left: 320px;
+		}
+		
+		> ul {
+				display: inline-block;
+				font-size: 0;
+			
+			li {
+				display: inline-block;
+				padding: 0;
+			}
+		}
 	}
 }
+
+// Social Icons
 
 .widget.socialicons,
 .widget.profile .bk-profile-socialicons {
