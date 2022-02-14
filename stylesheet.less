@@ -1246,62 +1246,12 @@ div.widget .extendednavigation {
 		}
 		
 		> ul {
-				display: inline-block;
-				font-size: 0;
+			display: inline-block;
+			font-size: 0;
 			
 			li {
 				display: inline-block;
 				padding: 0;
-			}
-		}
-	}
-}
-
-// Social Icons
-
-.widget.socialicons,
-.widget.profile .bk-profile-socialicons {
-	background-color: transparent;
-	padding: 0 35px;
-	
-	span a {
-		margin-right: 15px;
-		margin-bottom: 15px;
-		background-size: 16px;
-		background-color: darken(@color-swatch6, 15%);
-		.border-radius(50%);
-
-		.style--light & {
-			background-color: @color--dark;
-			color: @contrast--dark;
-		}
-
-		.style--accent & {
-			background-color: @color--dark;
-			color: @contrast--dark;
-		}
-
-		.style--dark & {
-			background-color: @color--accent;
-			color: @contrast--accent;
-		}
-		
-		&:hover {
-			background-color: darken(@color-swatch6, 20%);
-
-			.style--light & {
-				background-color: lighten(@color--dark, 5%);
-				color: @contrast--dark;
-			}
-
-			.style--accent & {
-				background-color: lighten(@color--dark, 5%);
-				color: @contrast--dark;
-			}
-
-			.style--dark & {
-				background-color: darken(@color--accent, 5%);
-				color: @contrast--accent;
 			}
 		}
 	}
@@ -2020,7 +1970,7 @@ form.blog-search-form .form-group button,
 
 	.style--dark & {
 		background-color: @color--accent;
-		color: @contrast--accent;
+		color: @contrast--dark;
 	}
 
 	&:hover,
@@ -2042,7 +1992,7 @@ form.blog-search-form .form-group button,
 
 		.style--dark & {
 			background-color: darken(@color--accent, 5%);
-			color: @contrast--accent;
+			color: @contrast--dark;
 		}
 	}
 
@@ -2071,19 +2021,107 @@ form.blog-search-form .form-group button,
 // Image Buttons
 
 .widget.tweet a,
+.widget.clicktocall a,
 .widget.dropbox button,
-.widget.paypalbuynow .widget.button.paypal,
-.widget.filedownload .btn,
-.widget.clicktocall a {
-	display: inline-block;
-	background-position: 25px;
-	padding: 10px 30px 10px 60px;
-	min-height: 45px;
+.widget.filedownload button.btn {
+	&, &:hover, &:focus {
+		background-image: none;
+	}
 }
 
-.widget.clicktocall a {
-	&, &:hover, &:focus {
-		background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABQAAAAUCAYAAACNiR0NAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAAyRpVFh0WE1MOmNvbS5hZG9iZS54bXAAAAAAADw/eHBhY2tldCBiZWdpbj0i77u/IiBpZD0iVzVNME1wQ2VoaUh6cmVTek5UY3prYzlkIj8+IDx4OnhtcG1ldGEgeG1sbnM6eD0iYWRvYmU6bnM6bWV0YS8iIHg6eG1wdGs9IkFkb2JlIFhNUCBDb3JlIDUuMy1jMDExIDY2LjE0NTY2MSwgMjAxMi8wMi8wNi0xNDo1NjoyNyAgICAgICAgIj4gPHJkZjpSREYgeG1sbnM6cmRmPSJodHRwOi8vd3d3LnczLm9yZy8xOTk5LzAyLzIyLXJkZi1zeW50YXgtbnMjIj4gPHJkZjpEZXNjcmlwdGlvbiByZGY6YWJvdXQ9IiIgeG1sbnM6eG1wPSJodHRwOi8vbnMuYWRvYmUuY29tL3hhcC8xLjAvIiB4bWxuczp4bXBNTT0iaHR0cDovL25zLmFkb2JlLmNvbS94YXAvMS4wL21tLyIgeG1sbnM6c3RSZWY9Imh0dHA6Ly9ucy5hZG9iZS5jb20veGFwLzEuMC9zVHlwZS9SZXNvdXJjZVJlZiMiIHhtcDpDcmVhdG9yVG9vbD0iQWRvYmUgUGhvdG9zaG9wIENTNiAoTWFjaW50b3NoKSIgeG1wTU06SW5zdGFuY2VJRD0ieG1wLmlpZDpENTg4MDkxNUI0RDcxMUUyOUZDMDhBQzY4M0VGNzM1QiIgeG1wTU06RG9jdW1lbnRJRD0ieG1wLmRpZDpENTg4MDkxNkI0RDcxMUUyOUZDMDhBQzY4M0VGNzM1QiI+IDx4bXBNTTpEZXJpdmVkRnJvbSBzdFJlZjppbnN0YW5jZUlEPSJ4bXAuaWlkOjYxMkE4MzU2QjRCQjExRTI5RkMwOEFDNjgzRUY3MzVCIiBzdFJlZjpkb2N1bWVudElEPSJ4bXAuZGlkOkQ1ODgwOTE0QjRENzExRTI5RkMwOEFDNjgzRUY3MzVCIi8+IDwvcmRmOkRlc2NyaXB0aW9uPiA8L3JkZjpSREY+IDwveDp4bXBtZXRhPiA8P3hwYWNrZXQgZW5kPSJyIj8+s2QrvwAAAPxJREFUeNpi/P//PwM1ARMDlQE2A7uAGOTsHWSZCPIyFHMC8cz/qMASSZ4ojOzCCUCchmafOyVeVsIiHwXE7OQa+BaLPC8Uk2XgdiD+icR/DMS2QPyG3EhhAeIFSBEyk9QIAadpNAFDJAP/ArE+pQaCcDOSoSepYSAIH0EydCuaHCMQ8wIxEykGigHxPSRDzwOxGlQuDIi/AfExIG4BYn8gFiBkIAjLAfFjJEM/AfFGIH7zHxMcAGJ1QgaCsDAQn/hPGDwCYhdiDIThRgIGNhPjZXSsAsQLockJGUxHVsdIYgELylmJQOwHxPxAfAGIa4D4C0wB46AvsQECDAB0BaRrDCyrSQAAAABJRU5ErkJggg==);
+.widget.tweet a,
+.widget.clicktocall a,
+.widget.dropbox button span,
+.widget.filedownload button.btn {
+	&:before {
+		float: left;
+		padding-right: 0.5em;
+		background-image: none;
+		font-family:'FontAwesome';
+		font-size: 1.5em;
+	}
+}
+
+.widget.tweet a:before {content: '\f099';}
+.widget.clicktocall a:before {content: '\f095';}
+.widget.dropbox button span:before {content: '\f16b';}
+.widget.filedownload button.btn:before {content: '\f019';}
+
+.widget.paypalbuynow .widget.button.paypal {
+	padding-left: 3.2em;
+    background-size: 1.2em;
+    background-position: 1.25em center;
+}
+
+// Social Icons
+
+.widget.socialicons,
+.widget.profile .bk-profile-socialicons {
+	background-color: transparent;
+	padding: 0 35px;
+	
+	span {
+		display: inline-block;
+
+		a {
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			background-image: none;
+			margin: 0 5px 10px;
+			padding: 0;
+			width: 36px;
+			height: 36px;
+			min-height: 36px;
+			background-color: darken(@color-swatch6, 15%);
+			.border-radius(50%);
+			text-indent: 0;
+			font-size: 0;
+
+			.style--light & {
+				background-color: lighten(@color--dark, 15%);
+			}
+
+			.style--accent & {
+				background-color: lighten(@color--dark, 15%);
+			}
+
+			.style--dark & {
+				background-color: darken(@color--accent, 15%);
+			}
+			
+			&:hover {
+				background-color: lighten(@color-swatch6, 20%);
+
+				.style--light & {
+					background-color: lighten(@color--dark, 20%);
+				}
+
+				.style--accent & {
+					background-color: darken(@color--dark, 20%);
+				}
+
+				.style--dark & {
+					background-color: darken(@color--accent, 20%);
+				}
+			}
+
+			&:before {
+				font-family: 'FontAwesome';
+				text-indent: 0;
+				font-size: 20px;
+			}
+		}
+
+		&.bk-socialicons-linkedin a:before {content: '\f0e1';}
+		&.bk-socialicons-twitter a:before {content: '\f099';}
+		&.bk-socialicons-instagram a:before {content: '\f16d';}
+		&.bk-socialicons-pinterest a:before {content: '\f0d2';}
+		&.bk-socialicons-facebook a:before {content: '\f09a';}
+		&.bk-socialicons-rss a:before {content: '\f09e';}
+		&.bk-socialicons-vkontakte a:before {content: '\f189';}
+		&.bk-socialicons-xing a:before {content: '\f168';}
+		&.bk-socialicons-youtube a:before {content: '\f16a';}
 	}
 }
 
@@ -3221,8 +3259,17 @@ select {
 		}
 	
 		.btn.ecom-product-add-to-cart-btn .text:before {
-			display: none;
-			background-image: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAQAAAC1+jfqAAAAAnNCSVQICFXsRgQAAAAJcEhZcwAAAcIAAAHCAeg8fVQAAAAZdEVYdFNvZnR3YXJlAHd3dy5pbmtzY2FwZS5vcmeb7jwaAAAAuUlEQVQoz5WRMQtBYRSGn8FOYb7ZTBa7KIPyL2S7JkliMVoo46VuNhYlCwaDQpFJGZTwAySLmTNY7vfdLnp7z7s8nXO+8/HCW/wEYJLwBmJYdL+MYMNAUcsJVCkSpUle6lacZOwEIjyYcmQn9S6+kFNewZwsNjUy7MUrwipQYCKyqXCmwUK7AymuHFgz4sYSUwc6GAQ+8rtckj5P2b/HUPJESAfK1LEk07SZuXUIUsKQ9Mm68f8+y0tvuuTWGQUQxH4AAAAASUVORK5CYII5acb2b252b9e4454aa71356570e6ae22');
+			content: '\f291';
+			display: inline-block;
+			top: 0;
+			margin-top: -0.25em;
+			margin-right: 0.5em;
+			background-image: none;
+			height: 1.5em;
+			width: 1.5em;
+			font-family: 'FontAwesome';
+			text-indent: 0;
+			font-size: 1.25em;
 		}
 	}
 	
