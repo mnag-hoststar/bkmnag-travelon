@@ -132,28 +132,26 @@ h6, .heading--6 {
 
 // Normal Text
 
-.widget.content,
-.widget.content.in-editing {
-	.wysihtml-editor-content,
-	.embed-content {
-		font-size: @font-swatch5-font-size !important;
-		line-height: @font-swatch5-line-height !important;
+.widget.content .wysihtml-editor-content,
+.widget.embed .embed-content,
+.widget.content.in-editing .wysihtml-editor-content {
+	font-size: @font-swatch5-font-size !important;
+	line-height: @font-swatch5-line-height !important;
+
+	&, p, span, small, pre, code,
+	table, th, td {
+		color: @font-swatch5-color;
 	
-		&, p, span, small, pre, code,
-		table, th, td {
+		.style--light & {
 			color: @font-swatch5-color;
-		
-			.style--light & {
-				color: @font-swatch5-color;
-			}
-		
-			.style--accent & {
-				color: @contrast--accent;
-			}
-		
-			.style--dark & {
-				color: @contrast--dark;
-			}
+		}
+	
+		.style--accent & {
+			color: @contrast--accent;
+		}
+	
+		.style--dark & {
+			color: @contrast--dark;
 		}
 	}
 }
@@ -277,7 +275,7 @@ blockquote {
 	
 			&:before {
 				position: absolute;
-				content: "\2013";
+				content: '\2013';
 				left: -2em;
 			}
 		}
@@ -318,6 +316,7 @@ blockquote {
 table {
 	overflow: auto;
 	width: 100%;
+	max-width: 100%;
 	border: none;
 	border-collapse: separate;
 	border-spacing: 0;
@@ -601,13 +600,13 @@ tr:last-child td {
 
 	.language-selector.language-selector--dropdown & {
 		&:before {
-			content: "";
+			content: '';
 			display: block;
 			height: @language-line-height;
 		}
 
 		&:after {
-			content: "";
+			content: '';
 			display: block;
 			height: @language-padding*2;
 		}
@@ -753,7 +752,7 @@ tr:last-child td {
 		&:after {
 			.language-selector.language-selector--dropdown & {
 				position: absolute;
-				content: "\25be";
+				content: '\25be';
 				top: 50%;
 				right: 0;
 				margin-top: -(@language-line-height/4);
@@ -1742,7 +1741,7 @@ hr.line {
 			right: 80px;
 
 			&:before {
-				content: "\003c";
+				content: '\003c';
 			}
 
 			@media @mobile {
@@ -1755,7 +1754,7 @@ hr.line {
 			right: 15px;
 
 			&:before {
-				content: "\003e";
+				content: '\003e';
 			}
 
 			@media @mobile {
@@ -1957,7 +1956,7 @@ button.button,
 .widget.filedownload button.btn,
 .widget.paypalbuynow .widget.button.paypal,
 .widget.socialicons span a,
-footer.bk-footer .widget.profile .bk-profile-socialicons span a,
+.widget.profile .bk-profile-socialicons span a,
 .widget.feature .feature-bgimg .content button,
 .userregistration fieldset .userregistrationbtn,
 .widget.yelpreview .review-body .review-link a,
@@ -2218,6 +2217,8 @@ select {
 		cursor: pointer;
 		padding-left: 2em;
 		margin-bottom: 0;
+		line-height: floor(@font-swatch5-line-height*0.8+2);
+		font-size: @font-swatch5-font-size;
 		word-break: break-word;
 		text-align: left;
 		text-transform: none;
@@ -2226,7 +2227,7 @@ select {
 			font-family: @font-swatch5-font-family;
 			font-weight: @font-swatch5-font-weight;
 			font-size: @font-swatch5-font-size;
-			line-height: @font-swatch5-line-height;
+			line-height: floor(@font-swatch5-line-height*0.8+2);
 			letter-spacing: @font-swatch5-letter-spacing;
 		}
 			
@@ -2234,7 +2235,7 @@ select {
 		&:after {
 			cursor: pointer;
 			display: block;
-			content: " ";
+			content: ' ';
 			position: absolute;
 			top: 0;
 			left: 0;
@@ -2242,7 +2243,6 @@ select {
 
 		&:before {
 			min-width: 0;
-			margin-top: floor(@font-swatch5-line-height*0.1);
 			height: floor(@font-swatch5-line-height*0.8);
 			width: floor(@font-swatch5-line-height*0.8);
 			background-color: @color-swatch1;
@@ -2276,7 +2276,6 @@ select {
 			border-radius: 50%;
 			background-color: @font-swatch7-background-color;
 			border: 1px solid @font-swatch7-background-color;
-			margin-top: floor(@font-swatch5-line-height*0.1);
 			height: floor(@font-swatch5-line-height*0.8);
 			transform: scale(50%);
 
@@ -2300,7 +2299,7 @@ select {
 	.label--checkbox,
 	label[for*="input--terms"] {
 		&:after {
-			margin-top: floor(@font-swatch5-line-height*-0.2+1);
+			margin-top: floor(@font-swatch5-line-height*-1.2/4);
 			height: floor(@font-swatch5-line-height*1.2);
 			border: 1px solid transparent;
 			box-shadow: -6px -6px 0 0 inset @font-swatch7-background-color;
@@ -2769,30 +2768,7 @@ select {
 
 			// Category
 
-			div.blog-post-category {
-				border-bottom: 1px solid lighten(@color-swatch5, 20%);
-				float: right;
-				width: 30%;
-				padding: 1em 0;
-
-				@media @tablet {
-					float: none;
-					width: auto;
-				}
-
-				@media @mobile {
-					padding: 0.5em 0;
-				}
-
-				.blog-post-category-label {
-					&:after {
-						content: ": ";
-					}
-				}
-			}
-
-			// Tags
-
+			div.blog-post-category,
 			.blog-post-tags {
 				float: right;
 				width: 30%;
@@ -2807,26 +2783,23 @@ select {
 					padding: 0.5em 0;
 				}
 
-				.blog-post-tags-label {
-					&:after {
-						content: ": ";
+				a {
+					display: inline-block;
+					padding: 0 10px;
+					background-color: @font-swatch7-background-color;
+					color: @font-swatch7-color;
+
+					&:hover {
+						text-decoration: none;
+						background-color: @font-swatch7-background-color-hover;
 					}
 				}
+			}
 
-				ol.blog-post-tags-list {
-					.blog-post-tag {
-						a {
-							display: inline-block;
-							padding: 0 10px;
-							background-color: @font-swatch7-background-color;
-							color: @font-swatch7-color;
-
-							&:hover {
-								text-decoration: none;
-								background-color: @font-swatch7-background-color-hover;
-							}
-						}
-					}
+			.blog-post-category-label,
+			.blog-post-tags-label {
+				&:after {
+					content: ':\00a0';
 				}
 			}
 		}
@@ -2933,7 +2906,7 @@ select {
 					width: 100%;
 
 					&:after {
-						content: ":";
+						content: ':\00a0';
 						display: inline-block;
 						position: relative;
 					}
@@ -3002,16 +2975,16 @@ select {
 
 .widget.ecomproductslist .ecom-productslist-product,
 .widget.ecomfeaturedproducts .ecom-featuredproducts-product {
+	a:hover {
+		text-decoration: none;
+	}
+
 	@media @mobile {
 		width: 97%;
 	}
 
 	.responsivecolumns & {
 		width: 97%;
-	}
-
-	a {
-		text-decoration: none;
 	}
 }
 
@@ -3021,6 +2994,13 @@ select {
 .widget.ecomfeaturedproducts .ecom-featuredproducts-image-wrap {
 	margin-bottom: 20px;
 	background-position: center;
+}
+
+.widget.ecomproductslist .ecom-productslist-image,
+.widget.ecomfeaturedproducts .ecom-featuredproducts-wrap .ecom-featuredproducts-product .ecom-featuredproducts-image {
+	display: none;
+    height: 100%;
+    margin: 0 auto;
 }
 
 // Title
@@ -3073,7 +3053,9 @@ select {
 		}
 	
 		.btn {
-			margin: 20px 20px 0 0;
+			margin: 20px 0 0;
+			text-align: center;
+			min-width: 250px;
 		}
 	
 		&-add-to-cart-btn-wrapper, 
@@ -3121,6 +3103,32 @@ select {
 			&:before {
 				float: none;
 			}
+		}
+	}
+
+	.ecom-product-tag,
+	.ecom-product-category {
+		display: flex;
+		flex-wrap: wrap;
+
+		&:after {
+			content: ':\00a0';
+			order: 0;
+			display: inline-block;
+		}
+	}
+
+	.store-category-link,
+	.ecom-product-tag-link {
+		font-weight: 300;
+        order: 1;
+
+		&:after {
+			content: ',\00a0';
+		}
+
+		&:last-child::after {
+			content: none;
 		}
 	}
 }
