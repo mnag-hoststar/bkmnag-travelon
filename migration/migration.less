@@ -8,17 +8,9 @@
 #migrated {
 	&.edit {
 		@media @tablet-large {
-			.bk-pt-home .bk-header {
-				width: ~"calc(100% - 200px)";
-			}
-
 			[data-widget-type="extendednavigation"] .widget-overlay {
 				left: 420px;
 				width: 100px;
-			}
-
-			.widget.extendednavigation a.pull {
-				left: 460px;
 			}
 		}
 	}
@@ -26,6 +18,16 @@
 	#main > .contain {
 		max-width: 100%;
 		padding: 0;
+	}
+}
+
+.widget.navigation,
+div.widget.extendednavigation,
+div.widget .extendednavigation {
+	a.pull {
+		body.edit#migrated & {
+			left: 100px;
+		}
 	}
 }
 
@@ -57,6 +59,10 @@
 		margin-right: auto;
 		max-width: 1200px;
 		width: ~"calc(100% - 80px)";
+
+		@media @mobile {
+			width: ~"calc(100% - 40px)";
+		}
 	}
 
 	// Move spacing to first widget in the main zone (not sections)
