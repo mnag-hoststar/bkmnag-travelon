@@ -158,7 +158,6 @@ h6, .heading--6 {
 
 p, ul, ol, li,
 dd, pre, code,
-.contentgroup__body,
 .widget.clicktocall a,
 blockquote {
 	color: fade(@font-swatch5-color, 90%);
@@ -315,8 +314,7 @@ blockquote {
 
 table {
 	overflow: auto;
-	width: 100%;
-	max-width: 100%;
+	min-width: 100%;
 	border: none;
 	border-collapse: separate;
 	border-spacing: 0;
@@ -408,12 +406,16 @@ td {
 		display: block;
 		padding: 0 0.5em;
 		border-bottom: none;
+		width: 100% !important;
+		max-width: 100%;
 	}
 	
 	.responsivecolumns & {
 		display: block;
 		padding: 0 0.5em;
 		border-bottom: none;
+		width: 100% !important;
+		max-width: 100%;
 	}
 	
 	&:first-child {
@@ -770,6 +772,7 @@ tr:last-child td {
 				.language-selector--light& {
 					color: black;
 				}
+
 				.language-selector--dark& {
 					color: @color-swatch1;
 				}
@@ -883,6 +886,7 @@ tr:last-child td {
 			color: @color-swatch1;
 		}
 	}
+
 	.language-selector.language-selector--dropdown .language-selector__item &,
 	.language-selector.language-selector--dropdown .language-selector__item:hover &,
 	.language-selector.language-selector--dropdown .language-selector__item--current:hover & {
@@ -894,6 +898,7 @@ tr:last-child td {
 			color: @color-swatch1;
 		}
 	}
+
 	.language-selector.language-selector--dropdown .language-selector__item--current & {
 		.language-selector--light& {
 			color: @color-swatch1;
@@ -940,7 +945,7 @@ header.bk-header {
 	.transition(all 0.5s ease);
 	background: lighten(@color-swatch6, 5%);
 	padding: 0 30px 0 130px;
-	right: 0!important;
+	right: 0 !important;
 	width: 100%;
 	text-align: right;
 
@@ -1977,6 +1982,7 @@ form.blog-search-form .form-group button,
 	display: inline-block;
 	padding: 10px 30px;
 	min-height: 45px;
+	height: auto !important;
 	.transition(all 0.5s ease);
 	text-decoration: none;
 	border: none;
@@ -2089,6 +2095,17 @@ form.blog-search-form .form-group button,
 	padding-left: 3.2em;
     background-size: 1.2em;
     background-position: 1.25em center;
+}
+
+.widget.filedownload div {
+	@media @mobile {
+		float: none;
+	}
+
+	span.file-name {
+		display: block;
+		margin: 0.5em 0;
+	}
 }
 
 // Social Icons
@@ -2273,6 +2290,7 @@ select {
 			width: floor(@font-swatch5-line-height*0.8);
 			background-color: @color-swatch1;
 			border: 1px solid @font-swatch7-background-color;
+			border-radius: 0;
 
 			.style--light & {
 				border-color: @font-swatch7-background-color;
@@ -3084,7 +3102,8 @@ form.blog-search-form {
 
 .widget.ecomproductslist .ecom-productslist-product,
 .widget.ecomfeaturedproducts .ecom-featuredproducts-product,
-.widget.ecomfeaturedproducts .ecom-featuredproducts-wrap .ecom-featuredproducts-product {
+.widget.ecomfeaturedproducts .ecom-featuredproducts-wrap .ecom-featuredproducts-product,
+.widget.ecomfeaturedproducts .ecom-featuredproducts-wrap.products-2 .ecom-featuredproducts-product {
 	margin-top: 2em;
 }
 
@@ -3306,26 +3325,26 @@ form.blog-search-form {
 				display: inline-block;
 			}
 		}
-	}
 
-	.store-category-link,
-	.ecom-product-tag-link {
-		display: inline-block;
-		margin-right: 5px;
-		padding: 0 10px;
-		background-color: @font-swatch7-background-color;
-		font-family: @font-swatch7-font-family;
-		color: @font-swatch7-color;
-		font-weight: 300;
-        order: 1;
-
-		&:last-child::after {
-			content: none;
-		}
-
-		&:hover {
-			text-decoration: none;
-			background-color: @font-swatch7-background-color-hover;
+		.store-category-link,
+		.ecom-product-tag-link {
+			display: inline-block;
+			margin-right: 5px;
+			padding: 0 10px;
+			background-color: @font-swatch7-background-color;
+			font-family: @font-swatch7-font-family;
+			color: @font-swatch7-color;
+			font-weight: 300;
+			order: 1;
+	
+			&:last-child::after {
+				content: none;
+			}
+	
+			&:hover {
+				text-decoration: none;
+				background-color: @font-swatch7-background-color-hover;
+			}
 		}
 	}
 }
