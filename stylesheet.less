@@ -255,6 +255,10 @@ blockquote {
 			color: @color--accent;
 		}
 	}
+
+	&:after {
+		display: none;
+	}
 }
 
 // Unordered and Ordered List
@@ -1027,19 +1031,19 @@ header.bk-header {
 }
 
 .bk-nav {
+	z-index: 100;
 	position: fixed;
 	overflow-y: auto;
 	overflow-x: hidden;
 	top: 0;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
 	background: fade(@color-swatch6, 80%);
 	height: 100%;
 	left: -320px;
 	width: 320px;
 	.transition(all 0.25s ease);
-	z-index: 9999;
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
 	
 	@media @mobile-small {
 		height: auto;
@@ -1819,7 +1823,8 @@ select {
 	padding-left: 8px;
 	padding-right: 8px;
 	background-color: @color-swatch1;
-	height: 45px;
+	min-height: 45px;
+	height: auto !important;
 	.transition(all 0.5s ease);
 
 	.style--light & {
@@ -1982,7 +1987,7 @@ form.blog-search-form .form-group button,
 	display: inline-block;
 	padding: 10px 30px;
 	min-height: 45px;
-	height: auto !important;
+	height: auto;
 	.transition(all 0.5s ease);
 	text-decoration: none;
 	border: none;
@@ -2627,6 +2632,7 @@ form.blog-search-form {
 			}
 
 			@media @mobile {
+				margin-top: 20px;
 				margin-bottom: 20px;
 			}
 
@@ -2706,10 +2712,18 @@ form.blog-search-form {
 			.blog-post-more-link {
 				float: left;
 				width: auto;
+
+				@media @mobile {
+					float: none;
+				}
 			}
 
 			.blog-post-date {
 				float: right;
+
+				@media @mobile {
+					float: none;
+				}
 			}
 		}
 	}
@@ -2901,10 +2915,6 @@ form.blog-search-form {
 			
 				.style--dark & {
 					color: fade(@contrast--dark, 60%);
-				}
-
-				span {
-					padding-left: 0.25em;
 				}
 			}
 		}
