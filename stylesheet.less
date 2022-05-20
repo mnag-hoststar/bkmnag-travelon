@@ -1243,7 +1243,8 @@ div.widget .extendednavigation {
 					}
 				}
 
-				ul {
+				> ul,
+				&:hover > ul {
 					display: none;
 					position: static;
 					z-index: auto;
@@ -1813,6 +1814,7 @@ hr.line {
 }
 
 input,
+textarea,
 .widget.profile form fieldset input,
 .widget.signupform fieldset input,
 input.blog-search-input, .widget.signupform input,
@@ -1826,6 +1828,7 @@ select {
 	min-height: 45px;
 	height: auto !important;
 	.transition(all 0.5s ease);
+	color: @font-swatch5-color;
 
 	.style--light & {
 		border-color: darken(@color-swatch2, 5%);
@@ -1880,56 +1883,8 @@ select {
 // Textarea
 
 textarea {
-	border: 1px solid darken(@color-swatch2, 5%);
-	background-color: @color-swatch1;
-	padding: 10px;
-	height: 100px;
-	.transition(all 0.5s ease);
-
-	.style--light & {
-		border-color: darken(@color-swatch2, 5%);
-	}
-
-	.style--accent & {
-		border-color: darken(@color--accent, 10%);
-	}
-
-	.style--dark & {
-		border-color: lighten(@color--dark, 10%);
-	}
-
-	&:hover {
-		border: 1px solid darken(@color-swatch2, 15%) !important;
-		.transition(all 0.5s ease);
-
-		.style--light & {
-			border-color: darken(@color-swatch2, 15%) !important;
-		}
-
-		.style--accent & {
-			border-color: darken(@color--accent, 20%) !important;
-		}
-
-		.style--dark & {
-			border-color: lighten(@color--dark, 20%) !important;
-		}
-	}
-
-	&:focus {
-		border: 1px solid darken(@color-swatch2, 25%) !important;
-
-		.style--light & {
-			border-color: darken(@color-swatch2, 25%) !important;
-		}
-
-		.style--accent & {
-			border-color: darken(@color--accent, 30%) !important;
-		}
-
-		.style--dark & {
-			border-color: lighten(@color--dark, 30%) !important;
-		}
-	}
+	padding: 10px 8px;
+	min-height: 100px;
 }
 
 // Label
@@ -1970,6 +1925,7 @@ button.button,
 .advancedcontactform button.btn,
 .widget.tweet a,
 .widget.clicktocall a,
+.widget.clicktocall a:hover,
 .widget.dropbox button,
 .widget.filedownload button.btn,
 .widget.paypalbuynow .widget.button.paypal,
@@ -2124,15 +2080,14 @@ form.blog-search-form .form-group button,
 		display: inline-block;
 
 		a {
-			display: flex;
-			justify-content: center;
-			align-items: center;
+			display: inline-block;
 			background-image: none;
 			margin: 0 5px 10px;
 			padding: 0;
 			width: 36px;
 			height: 36px;
 			min-height: 36px;
+			line-height: 36px;
 			background-color: darken(@color-swatch6, 15%);
 			.border-radius(50%);
 			text-indent: 0;
