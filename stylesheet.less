@@ -1957,7 +1957,8 @@ form.blog-search-form .form-group button,
 .widget.ecomproduct a.btn.ecom-product-go-to-checkout-btn,
 .widget.ecomproduct a.btn.ecombasket-summary-link,
 .widget.ecombasketsummary .btn.basket-summary-continue-shopping,
-.widget.ecombasketsummary .btn.basket-summary-submit {
+.widget.ecombasketsummary .btn.basket-summary-submit,
+.productlist-clear-search {
 	display: inline-block;
 	padding: 10px 30px;
 	min-height: 45px;
@@ -2085,6 +2086,16 @@ form.blog-search-form .form-group button,
 	span.file-name {
 		display: block;
 		margin: 0.5em 0;
+	}
+}
+
+// Product List Clear Search
+
+.productlist-clear-search {
+	margin: 10px 10px 60px;
+
+	@media @mobile {
+		width: calc(~"100% - 20px");
 	}
 }
 
