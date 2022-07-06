@@ -1395,9 +1395,12 @@ div.widget .extendednavigation {
 	margin: 20px 0;
 }
 
-hr.line {
-	background-color: darken(@color-swatch2, 20%);
+hr.line,
+.content hr {
 	margin: 0;
+	border: none;
+	height: 1px;
+	background-color: darken(@color-swatch2, 20%);
 
 	.style--light & {
 		background-color: darken(@color-swatch2, 20%);
