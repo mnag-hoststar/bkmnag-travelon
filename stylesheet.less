@@ -3177,35 +3177,26 @@ form.blog-search-form {
 		border-color: lighten(@color--dark, 12%);
 	}
 
-	.productlist-pagination-page.current {
-		color: @color-swatch3;
-		border: 1px solid @color-swatch3;
-
-		.style--light & {
-			border-color: @color-swatch3;
-			color: @color-swatch3;
-		}
-
-		.style--accent & {
-			border-color: @color--accent;
-			color: @contrast--accent;
-		}
-
-		.style--dark & {
-			border-color: @color--dark;
-			color: @contrast--dark;
-		}
+	.productlist-pagination-pages .productlist-pagination-page {
+		padding-right: 0.5em;
 	}
 
-	.productlist-pagination-page {
-		font-family: @font-swatch7-font-family;
-		color: @font-swatch7-color;
-		font-size: @font-swatch7-font-size;
-		font-weight: @font-swatch7-font-weight;
+
+	.productlist-pagination-pages .productlist-pagination-page a,
+	.productlist-pagination-pages .productlist-pagination-page.current span {
+		display: inline-block;
 		background-color: @color-swatch1;
 		border: 1px solid darken(@color-swatch6, 10%);
-		margin: 5px 10px 0 0;
-		text-decoration: none;
+		min-width: 32px;
+		height: 32px;
+		line-height: 30px;
+		font-family: @font-swatch7-font-family;
+			
+		@media @mobile {
+			min-width: 26px;
+			height: 26px;
+			line-height: 24px;
+		}
 
 		.style--light & {
 			border-color: darken(@color-swatch6, 10%);
@@ -3223,32 +3214,14 @@ form.blog-search-form {
 		}
 
 		&:hover {
-			border: 1px solid darken(@color-swatch6, 30%);
-
-			.style--light & {
-				border-color: darken(@color-swatch6, 30%);
-			}
-
-			.style--accent & {
-				border-color: lighten(@color--accent, 20%);
-			}
-
-			.style--dark & {
-				border-color: lighten(@color--dark, 20%);
-			}
+			text-decoration: none;
+			background-color: darken(@color-swatch1, 10%);
 		}
 	}
 
-	.productlist-pagination-pages .productlist-pagination-page {
-		height: 35px;
-		padding: 8px 14px;
-		line-height: 18px;
-		border-radius: 4px;
-	
-		&:hover {
-			cursor: pointer;
-			text-decoration: none;
-		}
+	.productlist-pagination-pages .productlist-pagination-page.current span {
+		background: none;
+		border: none;
 	}
 }
 
