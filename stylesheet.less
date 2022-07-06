@@ -3158,10 +3158,12 @@ form.blog-search-form {
 .widget.ecomproductslist .productlist-pagination,
 .widget.ecomfeaturedproducts .productlist-pagination {
 	margin-left: 0;
-	border-top: 1px solid darken(@color-swatch6, 10%);
-	padding-top: 1em;
 	margin-top: 3em;
 	margin-bottom: 5em;
+	width: 100%;
+	border-top: 1px solid darken(@color-swatch6, 10%);
+	padding-top: 1em;
+	text-align: center;
 
 	.style--light & {
 		border-color: darken(@color-swatch6, 10%);
@@ -3286,55 +3288,58 @@ form.blog-search-form {
 			font-family: 'FontAwesome';
 			text-indent: 0;
 		}
-	}
 
-	.product-actions {
-		button {
-			margin-bottom: 1em;
-			text-align: center;
-        
-			@media @mobile {
-				width: 100%;
-			}
-
-			&:before {
-				float: none;
+		.product-actions {
+			button {
+				margin-bottom: 1em;
+				text-align: center;
+			
+				@media @mobile {
+					width: 100%;
+				}
+	
+				&:before {
+					float: none;
+				}
 			}
 		}
-	}
-
-	.ecom-product .ecom-product-cattag {
-		.ecom-product-category,
-		.ecom-product-tag {
-			display: flex;
-			flex-wrap: wrap;
-			line-height: 1.5em;
 	
-			&:after {
-				content: ':\00a0';
-				order: 0;
+		.ecom-product-cattag {
+			.ecom-product-category,
+			.ecom-product-tag {
+				display: flex;
+				flex-wrap: wrap;
+				line-height: 1.5em;
+		
+				&:after {
+					content: ':\00a0';
+					order: 0;
+					display: inline-block;
+				}
+			}
+	
+			.store-category-link,
+			.ecom-product-tag-link {
 				display: inline-block;
-			}
-		}
-
-		.store-category-link,
-		.ecom-product-tag-link {
-			display: inline-block;
-			margin-right: 5px;
-			padding: 0 10px;
-			background-color: @font-swatch7-background-color;
-			font-family: @font-swatch7-font-family;
-			color: @font-swatch7-color;
-			font-weight: 300;
-			order: 1;
-	
-			&:last-child::after {
-				content: none;
-			}
-	
-			&:hover {
-				text-decoration: none;
-				background-color: @font-swatch7-background-color-hover;
+				word-break: break-word;
+				line-height: 1.4em;
+				margin-right: 5px;
+				margin-bottom: 5px;
+				padding: 0 10px;
+				background-color: @font-swatch7-background-color;
+				font-family: @font-swatch7-font-family;
+				color: @font-swatch7-color;
+				font-weight: 300;
+				order: 1;
+		
+				&:last-child::after {
+					content: none;
+				}
+		
+				&:hover {
+					text-decoration: none;
+					background-color: @font-swatch7-background-color-hover;
+				}
 			}
 		}
 	}
